@@ -90,6 +90,7 @@
             this.cash2OutLabel = new System.Windows.Forms.Label();
             this.cash2InLlabel = new System.Windows.Forms.Label();
             this.cash2Label = new System.Windows.Forms.Label();
+            this.MakeReference2 = new System.Windows.Forms.Button();
             tab5 = new System.Windows.Forms.TabPage();
             tab5.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -256,6 +257,7 @@
             // reference3
             // 
             this.reference3.BackColor = System.Drawing.Color.SteelBlue;
+            this.reference3.Controls.Add(this.MakeReference2);
             this.reference3.Controls.Add(this.dateBox);
             this.reference3.Controls.Add(this.totalBox);
             this.reference3.Controls.Add(this.total);
@@ -825,6 +827,16 @@
             this.cash2Label.TabIndex = 0;
             this.cash2Label.Text = "Наличност в Каса 2";
             // 
+            // MakeReference2
+            // 
+            this.MakeReference2.BackColor = System.Drawing.Color.DimGray;
+            this.MakeReference2.Location = new System.Drawing.Point(297, 163);
+            this.MakeReference2.Name = "MakeReference2";
+            this.MakeReference2.Size = new System.Drawing.Size(118, 48);
+            this.MakeReference2.TabIndex = 14;
+            this.MakeReference2.Text = "Разходи";
+            this.MakeReference2.UseVisualStyleBackColor = false;
+            // 
             // iTech
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -923,6 +935,7 @@
         private System.Windows.Forms.DataGridView refferenceIncomeBox;
         private System.Windows.Forms.DataGridView refferenceCostBox;
         private System.Windows.Forms.DataGridView dateBox;
+        private System.Windows.Forms.Button MakeReference2;
     }
 }
 
