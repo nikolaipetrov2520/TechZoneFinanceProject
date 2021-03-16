@@ -518,8 +518,8 @@ namespace iTech
             DateTime endDate = DateTime.Parse(dateEnd.Text);
             dateIncomeList.Clear();
            // string[] line = File.ReadAllLines(incomePath);
-            int startIndex = -1;
-            int endIndex = -1;
+           // int startIndex = -1;
+           // int endIndex = -1;
             //int quantity = 1;
             decimal sumIncome = 0;
             decimal sumRepair = 0;
@@ -597,6 +597,56 @@ namespace iTech
             //    dateBox.DataSource = "За избраната дата няма данни. Моля изберете друга дата.";
             //}
            
+
+        }
+        private void MakeReference2_Click(object sender, EventArgs e)
+        {
+            DateTime startDate = DateTime.Parse(dateStart.Text);
+            DateTime endDate = DateTime.Parse(dateEnd.Text);
+            dateIncomeList.Clear();                   
+            decimal sumIncome = 0;
+            decimal sumRepair = 0;
+
+            dateIncomeList = techzone.Incomes
+                .Where(x => x.Date >= startDate && x.Date <= endDate)
+                .Select(x => new RefIncome
+                {
+                    Date = x.Date,
+                    Article = x.Article,
+                    Quantity = x.Quantity,
+                    Price = x.Price,
+                    Repair = x.Repair
+                })
+                .ToList();
+
+            foreach (var entity in dateIncomeList)
+            {
+                sumIncome += (decimal)(entity.Quantity * entity.Price);
+                sumRepair += (decimal)(entity.Quantity * entity.Repair);
+            }
+
+
+            dateBox.DataSource = null;
+            dateBox.DataSource = dateIncomeList;
+            dateBox.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
+            dateBox.DefaultCellStyle.ForeColor = Color.Black;
+            dateBox.EnableHeadersVisualStyles = false;
+            dateBox.Columns[0].Width = 118;
+            dateBox.Columns[0].HeaderText = "Дата";
+            dateBox.Columns[1].Width = 340;
+            dateBox.Columns[1].HeaderText = "Артикул";
+            dateBox.Columns[2].Width = 60;
+            dateBox.Columns[2].HeaderText = "Брой";
+            dateBox.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dateBox.Columns[3].HeaderText = "Цена";
+            dateBox.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dateBox.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dateBox.Columns[4].HeaderText = "Ремонт";
+            dateBox.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dateBox.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dateIncomeBox.Text = sumIncome.ToString();
+            dateRepairBox.Text = sumRepair.ToString();
+            totalBox.Text = (sumIncome + sumRepair).ToString();
 
         }
 
@@ -765,7 +815,7 @@ namespace iTech
                 techzone.SaveChanges();
 
                 //File.AppendAllText(cash2Path, $"{date}|{cash2}{Environment.NewLine}");
-                File.AppendAllText(costPath, $"{date}|Прехвърлени към Каса 2@{cash2}|{cash2}{Environment.NewLine}");
+                //File.AppendAllText(costPath, $"{date}|Прехвърлени към Каса 2@{cash2}|{cash2}{Environment.NewLine}");
                 cashBox.Text = GetCash();
                 costForDayBox.Text = CostForDay(date);
                 GetRefferenceCostBoxData(date);
@@ -808,7 +858,7 @@ namespace iTech
                 techzone.SaveChanges();
 
                 //File.AppendAllText(cash2Path, $"{date}|-{cash2}{Environment.NewLine}");
-                File.AppendAllText(incomePath, $"{date}|Прехвърлени от Каса 2@1@{cash2}@0|{cash2}{Environment.NewLine}");
+               // File.AppendAllText(incomePath, $"{date}|Прехвърлени от Каса 2@1@{cash2}@0|{cash2}{Environment.NewLine}");
                 cashBox.Text = GetCash();
                 sum.Text = IncomForDay(date);
                 GetRefferenceIncomeBoxData(date);
@@ -836,5 +886,7 @@ namespace iTech
             //}
             return $"{cash:f2}".ToString();
         }
+
+        
     }
 }

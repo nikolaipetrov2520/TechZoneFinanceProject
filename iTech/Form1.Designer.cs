@@ -830,12 +830,14 @@
             // MakeReference2
             // 
             this.MakeReference2.BackColor = System.Drawing.Color.DimGray;
+            this.MakeReference2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MakeReference2.Location = new System.Drawing.Point(297, 163);
             this.MakeReference2.Name = "MakeReference2";
-            this.MakeReference2.Size = new System.Drawing.Size(118, 48);
+            this.MakeReference2.Size = new System.Drawing.Size(117, 48);
             this.MakeReference2.TabIndex = 14;
             this.MakeReference2.Text = "Разходи";
             this.MakeReference2.UseVisualStyleBackColor = false;
+            this.MakeReference2.Click += new System.EventHandler(this.MakeReference2_Click);
             // 
             // iTech
             // 
