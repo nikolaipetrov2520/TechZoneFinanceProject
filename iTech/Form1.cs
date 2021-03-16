@@ -20,6 +20,7 @@ namespace iTech
         private List<RefIncome> incomeList;
         private List<RefCost> costPrintList;
         private List<RefIncome> dateIncomeList;
+        private List<RefCost> dateCostList;
         private TechZoneContext techzone = new TechZoneContext();
         public iTech()
         {
@@ -28,6 +29,7 @@ namespace iTech
             incomeList = new List<RefIncome>();
             costPrintList = new List<RefCost>();
             dateIncomeList = new List<RefIncome>();
+            dateCostList = new List<RefCost>();
             InitializeComponent();
             tabControl1.SelectedTab = tab1;
             tabControl2.SelectedTab = reference1;
@@ -603,50 +605,48 @@ namespace iTech
         {
             DateTime startDate = DateTime.Parse(dateStart.Text);
             DateTime endDate = DateTime.Parse(dateEnd.Text);
-            dateIncomeList.Clear();                   
+            dateCostList.Clear();                   
             decimal sumIncome = 0;
             decimal sumRepair = 0;
+            decimal sumCost = 0;
 
-            dateIncomeList = techzone.Incomes
+            dateCostList = techzone.Costs
                 .Where(x => x.Date >= startDate && x.Date <= endDate)
-                .Select(x => new RefIncome
+                .Select(x => new RefCost
                 {
                     Date = x.Date,
-                    Article = x.Article,
-                    Quantity = x.Quantity,
-                    Price = x.Price,
-                    Repair = x.Repair
+                    Sum = x.Sum,
+                    Name = x.Name,
                 })
                 .ToList();
 
-            foreach (var entity in dateIncomeList)
+            foreach (var entity in dateCostList)
             {
-                sumIncome += (decimal)(entity.Quantity * entity.Price);
-                sumRepair += (decimal)(entity.Quantity * entity.Repair);
+                sumCost += (decimal)(entity.Sum);
             }
 
 
             dateBox.DataSource = null;
-            dateBox.DataSource = dateIncomeList;
+            dateBox.DataSource = dateCostList;
             dateBox.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
             dateBox.DefaultCellStyle.ForeColor = Color.Black;
             dateBox.EnableHeadersVisualStyles = false;
             dateBox.Columns[0].Width = 118;
             dateBox.Columns[0].HeaderText = "Дата";
-            dateBox.Columns[1].Width = 340;
-            dateBox.Columns[1].HeaderText = "Артикул";
-            dateBox.Columns[2].Width = 60;
-            dateBox.Columns[2].HeaderText = "Брой";
+            dateBox.Columns[1].Width = 500;
+            dateBox.Columns[1].HeaderText = "Разход";
+            dateBox.Columns[2].HeaderText = "Сума";
+            dateBox.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             dateBox.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dateBox.Columns[3].HeaderText = "Цена";
-            dateBox.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dateBox.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dateBox.Columns[4].HeaderText = "Ремонт";
-            dateBox.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dateBox.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //dateBox.Columns[3].HeaderText = "Цена";
+            //dateBox.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //dateBox.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //dateBox.Columns[4].HeaderText = "Ремонт";
+            //dateBox.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //dateBox.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dateIncomeBox.Text = sumIncome.ToString();
             dateRepairBox.Text = sumRepair.ToString();
-            totalBox.Text = (sumIncome + sumRepair).ToString();
+            totalBox.Text = sumCost.ToString();
 
         }
 

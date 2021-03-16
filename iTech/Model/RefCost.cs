@@ -6,8 +6,9 @@ namespace iTech.Model
 {
     class RefCost
     {
+        public DateTime? Date { get; set; }
         public string Name { get; set; }
         public decimal? Sum { get; set; }
-        public DateTime? Date { get; set; }
+        
     }
 }
