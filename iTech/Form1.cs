@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 using DataBase.Model;
 using iTech.Model;
 
@@ -15,17 +11,13 @@ namespace iTech
 {
     public partial class iTech : Form
     {
-        //private List<string> list;
-        private List<string> costList;
         private List<RefIncome> incomeList;
         private List<RefCost> costPrintList;
         private List<RefIncome> dateIncomeList;
         private List<RefCost> dateCostList;
-        private TechZoneContext techzone = new TechZoneContext();
+        private readonly TechZoneContext techzone = new TechZoneContext();
         public iTech()
         {
-            //list = new List<string>();
-            costList = new List<string>();
             incomeList = new List<RefIncome>();
             costPrintList = new List<RefCost>();
             dateIncomeList = new List<RefIncome>();
@@ -33,17 +25,16 @@ namespace iTech
             InitializeComponent();
             tabControl1.SelectedTab = tab1;
             tabControl2.SelectedTab = reference1;
-            string date = DateTime.Now.ToShortDateString();
-            sum.Text = IncomForDay(date);
-            costForDayBox.Text = CostForDay(date);
-            GetIncomsForDay(date);
-            GetCostForDay(date);
+            sum.Text = IncomForDay();
+            costForDayBox.Text = CostForDay();
+            GetIncomsForDay();
+            GetCostForDay();
             articleBox.Select();
             cashBox.Text = GetCash();
             cash2Box.Text = GetCash2();
         }
 
-        private List<RefCost> GetCostForDay(string date)
+        private List<RefCost> GetCostForDay()
         {
             costPrintList.Clear();
 
@@ -59,17 +50,6 @@ namespace iTech
                  })
                  .ToList();
 
-            //string[] line = File.ReadAllLines(costPath);
-            //for (int i = 0; i < line.Length; i++)
-            //{
-            //    if (line[i].Contains(date))
-            //    {
-            //        string[] arr = line[i].Split('|', StringSplitOptions.RemoveEmptyEntries);
-            //        string[] arr2 = arr[1].Split('@', StringSplitOptions.RemoveEmptyEntries);
-            //      //  Cost cost = new Cost(arr[0], arr2[0], $"{decimal.Parse(arr2[1]):f2}лв.");
-            //      // costPrintList.Add(cost);
-            //    }
-            //}
             refferenceCostBox.DataSource = null;
             refferenceCostBox.ColumnHeadersDefaultCellStyle.BackColor = Color.Gainsboro;
             refferenceCostBox.EnableHeadersVisualStyles = false;
@@ -78,7 +58,7 @@ namespace iTech
 
         }
 
-        private List<RefIncome> GetIncomsForDay(string date)
+        private List<RefIncome> GetIncomsForDay()
         {
             incomeList.Clear();
 
@@ -96,20 +76,6 @@ namespace iTech
                  })
                  .ToList();
 
-
-
-            //string[] line = File.ReadAllLines(incomePath);
-            //for (int i = 0; i < line.Length; i++)
-            //{
-            //    if (line[i].Contains(date))
-            //    {
-            //        string[] arr = line[i].Split('|', StringSplitOptions.RemoveEmptyEntries);
-            //        string[] arr2 = arr[1].Split('@', StringSplitOptions.RemoveEmptyEntries);
-            //       // Income income = new Income(arr[0], arr2[0], int.Parse(arr2[1]), $"{decimal.Parse(arr2[2]):f2}лв.", $"{decimal.Parse(arr2[3]):f2}лв.");
-            //       // incomeList.Add(income);
-                    
-            //    }
-            //}
             refferenceIncomeBox.DataSource = null;
             refferenceIncomeBox.ColumnHeadersDefaultCellStyle.BackColor = Color.Gainsboro;
             refferenceIncomeBox.EnableHeadersVisualStyles = false;
@@ -172,13 +138,6 @@ namespace iTech
                 };
 
 
-                //list.Add(articleBox.Text);
-                //list.Add(quantityString);
-                //list.Add(priceString);
-                //list.Add(repairString);
-
-                //string result = (int.Parse(list[1]) * (decimal.Parse(list[2]) + decimal.Parse(list[3]))).ToString();
-
                 SaveLineIncome(entity);
             }
             else
@@ -193,14 +152,9 @@ namespace iTech
             techzone.Incomes.Add(entity);
             techzone.SaveChanges();
 
-
-            string date = DateTime.Now.ToShortDateString();
-
-            //File.AppendAllText(incomePath, $"{date}|{String.Join("@", list)}|{result}{Environment.NewLine}");
-
-            sum.Text = IncomForDay(date);
-            GetRefferenceIncomeBoxData(date);
-            //list.Clear();
+            sum.Text = IncomForDay();
+            GetRefferenceIncomeBoxData();
+ 
             cashBox.Text = GetCash();
             articleBox.Text = "";
             quantityBox.Text = "1";
@@ -209,10 +163,10 @@ namespace iTech
             
         }
 
-        private void GetRefferenceIncomeBoxData(string date)
+        private void GetRefferenceIncomeBoxData()
         {
             refferenceIncomeBox.DataSource = null;
-            List<RefIncome> list = GetIncomsForDay(date);
+            List<RefIncome> list = GetIncomsForDay();
             refferenceIncomeBox.DataSource = list;
             refferenceIncomeBox.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;      
             refferenceIncomeBox.Columns[0].HeaderText = "Дата";
@@ -229,10 +183,10 @@ namespace iTech
 
         }
 
-        private void GetRefferenceCostBoxData(string date)
+        private void GetRefferenceCostBoxData()
         {
             refferenceCostBox.DataSource = null;
-            List<RefCost> list = GetCostForDay(date);
+            List<RefCost> list = GetCostForDay();
             refferenceCostBox.DataSource = list;         
             refferenceCostBox.Columns[0].HeaderText = "Дата";
             refferenceCostBox.Columns[1].HeaderText = "Име";
@@ -284,6 +238,7 @@ namespace iTech
                 articleBox.Select();
             }
         }
+
         private void submit_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -336,18 +291,12 @@ namespace iTech
                     }
                 }
 
-
                 var entity = new Cost
                 {
                     Date = DateTime.Now,
                     Name = costNameBox.Text,
                     Sum = decimal.Parse(costSumString)
                 };
-
-                //costList.Add(costNameBox.Text);
-                //costList.Add(costSumString);
-
-                //string result = (decimal.Parse(costList[1])).ToString();
 
                 SaveLineCost(entity);
             }
@@ -375,32 +324,19 @@ namespace iTech
             techzone.SaveChanges();
 
 
-            string date = DateTime.Now.ToShortDateString();
-
-            //File.AppendAllText(costPath, $"{date}|{String.Join('@', list)}|{result}{Environment.NewLine}");
-
-            costForDayBox.Text = CostForDay(date);
-            GetRefferenceCostBoxData(date);
-            costList.Clear();
+            costForDayBox.Text = CostForDay();
+            GetRefferenceCostBoxData();
+     
             cashBox.Text = GetCash();
             costNameBox.Text = "";
             costSumBox.Text = "0";
         }
 
-        private string CostForDay(string date)
+        private string CostForDay()
         {
 
-            //string[] line = File.ReadAllLines(costPath);
             decimal sum = 0;
-            //for (int i = 0; i < line.Length; i++)
-            //{
-            //    if (line[i].Contains(date))
-            //    {
-            //        string[] arr = line[i].Split('|', StringSplitOptions.RemoveEmptyEntries);
-            //        sum += decimal.Parse(arr[2]);
-
-            //    }
-            //}
+    
             var dateNow = DateTime.Now.Date;
 
             var costs = techzone.Costs
@@ -414,10 +350,8 @@ namespace iTech
             return sum.ToString();
         }
 
-        private string IncomForDay(string date)
+        private string IncomForDay()
         {
-
-            //string[] line = File.ReadAllLines(incomePath);
             decimal sum = 0;
             decimal incomeSum = 0;
             decimal repairSum = 0;           
@@ -436,19 +370,6 @@ namespace iTech
 
             sum += incomeSum + repairSum;
 
-            //for (int i = 0; i < line.Length; i++)
-            //{
-            //    if (line[i].Contains(date))
-            //    {
-            //        string[] arr = line[i].Split('|', StringSplitOptions.RemoveEmptyEntries);
-            //        string[] arr2 = arr[1].Split('@', StringSplitOptions.RemoveEmptyEntries);
-            //        quantity = int.Parse(arr2[1]);
-            //        incomeSum += quantity * decimal.Parse(arr2[2]);
-            //        repairSum += quantity * decimal.Parse(arr2[3]);
-
-            //        sum += decimal.Parse(arr[2]);
-            //    }
-            //}
             incomeSumBox.Text = incomeSum.ToString();
             incomeRepairBox.Text = repairSum.ToString();
             return sum.ToString();
@@ -519,10 +440,7 @@ namespace iTech
             DateTime startDate = DateTime.Parse(dateStart.Text);
             DateTime endDate = DateTime.Parse(dateEnd.Text);
             dateIncomeList.Clear();
-           // string[] line = File.ReadAllLines(incomePath);
-           // int startIndex = -1;
-           // int endIndex = -1;
-            //int quantity = 1;
+     
             decimal sumIncome = 0;
             decimal sumRepair = 0;
 
@@ -544,34 +462,6 @@ namespace iTech
                 sumRepair += (decimal)(entity.Quantity * entity.Repair);
             }
 
-            //for (int i = 0; i < line.Length; i++)
-            //{
-            //    if (line[i].Contains(startDate))
-            //    {
-            //        startIndex = i;
-            //        break;
-            //    }
-            //}
-            //for (int i = 0; i < line.Length; i++)
-            //{
-            //    if (line[i].Contains(endDate))
-            //    {
-            //        endIndex = i;
-            //    }
-            //}
-            //if (startIndex > 0 && endIndex > 0 && startIndex <= line.Length && endIndex <= line.Length)
-            //{
-            //    for (int i = startIndex; i <= endIndex; i++)
-            //    {
-
-            //        string[] arr = line[i].Split('|', StringSplitOptions.RemoveEmptyEntries);
-            //        string[] arr2 = arr[1].Split('@', StringSplitOptions.RemoveEmptyEntries);
-            //        //Income income = new Income(arr[0], arr2[0], int.Parse(arr2[1]), $"{decimal.Parse(arr2[2]):f2}лв.", $"{decimal.Parse(arr2[3]):f2}лв.");
-            //       // quantity = int.Parse(arr2[1]);
-            //        //sumIncome += quantity * decimal.Parse(arr2[2]);
-            //       // sumRepair += quantity * decimal.Parse(arr2[3]);
-            //       // dateIncomeList.Add(income);                 
-            //    }
                 dateBox.DataSource = null;
                 dateBox.DataSource = dateIncomeList;
                 dateBox.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
@@ -593,12 +483,7 @@ namespace iTech
                 dateIncomeBox.Text = sumIncome.ToString();
                 dateRepairBox.Text = sumRepair.ToString();
                 totalBox.Text = (sumIncome + sumRepair).ToString();
-            //}
-            //else
-            //{
-            //    dateBox.DataSource = "За избраната дата няма данни. Моля изберете друга дата.";
-            //}
-           
+        
 
         }
         private void MakeReference2_Click(object sender, EventArgs e)
@@ -638,12 +523,6 @@ namespace iTech
             dateBox.Columns[2].HeaderText = "Сума";
             dateBox.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             dateBox.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            //dateBox.Columns[3].HeaderText = "Цена";
-            //dateBox.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            //dateBox.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            //dateBox.Columns[4].HeaderText = "Ремонт";
-            //dateBox.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            //dateBox.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dateIncomeBox.Text = sumIncome.ToString();
             dateRepairBox.Text = sumRepair.ToString();
             totalBox.Text = sumCost.ToString();
@@ -655,8 +534,6 @@ namespace iTech
             decimal sumIncom = 0;
             decimal incomeSum = 0;
             decimal repairSum = 0;
-
-           
 
             var incoms = techzone.Incomes                 
                  .ToList();
@@ -674,31 +551,9 @@ namespace iTech
                  .ToList()
                  .Sum();
 
-
-
             decimal cash = 0m;
 
             cash = (decimal)(sumIncom - costs);
-
-
-            //string[] lineIncome = File.ReadAllLines(incomePath);
-            //string[] lineCost = File.ReadAllLines(costPath);
-
-            //cash += decimal.Parse(lineIncome[0]);
-            //for (int i = 1; i < lineIncome.Length; i++)
-            //{
-            //    string[] arr = lineIncome[i].Split('|', StringSplitOptions.RemoveEmptyEntries);
-            //    decimal currentIncome = decimal.Parse(arr[arr.Length - 1]);
-            //    cash += currentIncome;
-            //}
-            //for (int i = 0; i < lineCost.Length; i++)
-            //{
-            //    string[] arr = lineCost[i].Split('|', StringSplitOptions.RemoveEmptyEntries);
-            //    decimal currentCost = decimal.Parse(arr[arr.Length - 1]);
-            //    cash -= currentCost;
-            //}
-
-
 
             return $"{cash:f2}".ToString();
         }
@@ -715,7 +570,6 @@ namespace iTech
                 e.Handled = true;
             }
 
-            // If you want, you can allow decimal (float) numbers
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
@@ -800,9 +654,6 @@ namespace iTech
                         cash2 = c2Str1 + '.' + c2Str2;
                     }
                 }
-                //?
-                string date = DateTime.Now.ToShortDateString();
-
                 decimal cash2Sum = decimal.Parse(cash2);
 
                 var entity = new Cash2
@@ -813,12 +664,9 @@ namespace iTech
                 };
                 techzone.Cash2s.Add(entity);
                 techzone.SaveChanges();
-
-                //File.AppendAllText(cash2Path, $"{date}|{cash2}{Environment.NewLine}");
-                //File.AppendAllText(costPath, $"{date}|Прехвърлени към Каса 2@{cash2}|{cash2}{Environment.NewLine}");
                 cashBox.Text = GetCash();
-                costForDayBox.Text = CostForDay(date);
-                GetRefferenceCostBoxData(date);
+                costForDayBox.Text = CostForDay();
+                GetRefferenceCostBoxData();
             }
             else
             {
@@ -843,8 +691,6 @@ namespace iTech
                         cash2 = c2Str1 + '.' + c2Str2;
                     }
                 }
-                //?
-                string date = DateTime.Now.ToShortDateString();
               
                 decimal cash2Sum = decimal.Parse(cash2);
 
@@ -856,12 +702,9 @@ namespace iTech
                 };
                 techzone.Cash2s.Add(entity);
                 techzone.SaveChanges();
-
-                //File.AppendAllText(cash2Path, $"{date}|-{cash2}{Environment.NewLine}");
-               // File.AppendAllText(incomePath, $"{date}|Прехвърлени от Каса 2@1@{cash2}@0|{cash2}{Environment.NewLine}");
                 cashBox.Text = GetCash();
-                sum.Text = IncomForDay(date);
-                GetRefferenceIncomeBoxData(date);
+                sum.Text = IncomForDay();
+                GetRefferenceIncomeBoxData();
             }
             else
             {
@@ -876,17 +719,9 @@ namespace iTech
             decimal cash = 0m;
 
             cash = (decimal)techzone.Cash2s.Sum(x => x.Money);
-            //string[] lineCash2 = File.ReadAllLines(cash2Path);
 
-            //for (int i = 0; i < lineCash2.Length; i++)
-            //{
-            //    string[] arr = lineCash2[i].Split('|', StringSplitOptions.RemoveEmptyEntries);
-            //    decimal currentCash2 = decimal.Parse(arr[1]);
-            //    cash += currentCash2;
-            //}
             return $"{cash:f2}".ToString();
         }
-
         
     }
 }

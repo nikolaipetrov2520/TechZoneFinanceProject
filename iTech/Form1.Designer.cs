@@ -894,7 +894,7 @@
         private System.Windows.Forms.TextBox sum;
         private System.Windows.Forms.TabPage tab3;
         private System.Windows.Forms.TabPage tab4;
-        private System.Windows.Forms.TabPage tab5;
+       // private System.Windows.Forms.TabPage tab5;
         private System.Windows.Forms.Label costForDay;
         private System.Windows.Forms.Label costSum;
         private System.Windows.Forms.Label costName;
