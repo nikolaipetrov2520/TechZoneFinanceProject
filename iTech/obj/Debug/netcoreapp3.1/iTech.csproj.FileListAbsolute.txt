@@ -54,3 +54,4 @@ C:\Users\user\source\repos\iTech\iTech\obj\Debug\netcoreapp3.1\iTech.csproj.Copy
 C:\Users\user\source\repos\iTech\iTech\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\user\source\repos\iTech\iTech\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\user\source\repos\iTech\iTech\obj\Debug\netcoreapp3.1\iTech.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\iTech\iTech\obj\Debug\netcoreapp3.1\iTech.Edit.resources

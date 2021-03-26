@@ -662,6 +662,13 @@ namespace iTech
                     Money = cash2Sum
 
                 };
+                var cost = new Cost
+                {
+                    Name = "Прехвърляне към Каса 2",
+                    Sum = cash2Sum,
+                    Date = DateTime.Now,
+                };
+                techzone.Costs.Add(cost);
                 techzone.Cash2s.Add(entity);
                 techzone.SaveChanges();
                 cashBox.Text = GetCash();
@@ -700,6 +707,16 @@ namespace iTech
                     Money = -cash2Sum
 
                 };
+                var income = new Income
+                {
+                    Date = DateTime.Now,
+                    Article = "Прехвърляне от Каса 2",
+                    Quantity = 1,
+                    Price = cash2Sum,
+                    Repair = 0.00m,
+
+                };
+                techzone.Incomes.Add(income);
                 techzone.Cash2s.Add(entity);
                 techzone.SaveChanges();
                 cashBox.Text = GetCash();
@@ -722,6 +739,12 @@ namespace iTech
 
             return $"{cash:f2}".ToString();
         }
-        
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            Edit edit = new Edit();
+            DialogResult dialogresult = edit.ShowDialog();
+
+        }
     }
 }
