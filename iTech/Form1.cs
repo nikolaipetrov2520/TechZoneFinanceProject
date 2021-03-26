@@ -744,7 +744,7 @@ namespace iTech
         {
             Edit edit = new Edit();
             DialogResult dialogresult = edit.ShowDialog();
-
+            edit.Dispose();
         }
     }
 }

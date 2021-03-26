@@ -43,6 +43,7 @@ namespace iTech
             this.CloseButton.TabIndex = 0;
             this.CloseButton.Text = "Затвори";
             this.CloseButton.UseVisualStyleBackColor = false;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // Edit
             // 
