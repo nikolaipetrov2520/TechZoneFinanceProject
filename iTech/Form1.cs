@@ -742,8 +742,21 @@ namespace iTech
 
         private void EditButton_Click(object sender, EventArgs e)
         {
-            Edit edit = new Edit();
+            DateTime startDate = DateTime.Parse(dateStart.Text);
+            DateTime endDate = DateTime.Parse(dateEnd.Text);
+
+            Edit edit = new Edit(startDate, endDate, techzone);
             DialogResult dialogresult = edit.ShowDialog();
+
+            sum.Text = IncomForDay();
+            GetRefferenceIncomeBoxData();
+
+            cashBox.Text = GetCash();
+            articleBox.Text = "";
+            quantityBox.Text = "1";
+            priceBox.Text = "0";
+            repairBox.Text = "0";
+
             edit.Dispose();
         }
     }

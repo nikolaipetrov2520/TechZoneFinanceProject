@@ -44,6 +44,7 @@
             this.costReferenceBox = new System.Windows.Forms.TextBox();
             this.costReferenceLabel = new System.Windows.Forms.Label();
             this.reference3 = new System.Windows.Forms.TabPage();
+            this.EditButton = new System.Windows.Forms.Button();
             this.MakeReference2 = new System.Windows.Forms.Button();
             this.dateBox = new System.Windows.Forms.DataGridView();
             this.totalBox = new System.Windows.Forms.TextBox();
@@ -91,7 +92,6 @@
             this.cash2OutLabel = new System.Windows.Forms.Label();
             this.cash2InLlabel = new System.Windows.Forms.Label();
             this.cash2Label = new System.Windows.Forms.Label();
-            this.EditButton = new System.Windows.Forms.Button();
             tab5 = new System.Windows.Forms.TabPage();
             tab5.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -279,6 +279,17 @@
             this.reference3.Size = new System.Drawing.Size(1276, 554);
             this.reference3.TabIndex = 2;
             this.reference3.Text = "Справка по дати";
+            // 
+            // EditButton
+            // 
+            this.EditButton.BackColor = System.Drawing.Color.DimGray;
+            this.EditButton.Location = new System.Drawing.Point(66, 234);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(117, 45);
+            this.EditButton.TabIndex = 15;
+            this.EditButton.Text = "Edit";
+            this.EditButton.UseVisualStyleBackColor = false;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // MakeReference2
             // 
@@ -841,17 +852,6 @@
             this.cash2Label.TabIndex = 0;
             this.cash2Label.Text = "Наличност в Каса 2";
             // 
-            // EditButton
-            // 
-            this.EditButton.BackColor = System.Drawing.Color.DimGray;
-            this.EditButton.Location = new System.Drawing.Point(66, 234);
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(117, 45);
-            this.EditButton.TabIndex = 15;
-            this.EditButton.Text = "Edit";
-            this.EditButton.UseVisualStyleBackColor = false;
-            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
-            // 
             // iTech
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -864,6 +864,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "iTech";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TechZoneBG v2.0";
             tab5.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
