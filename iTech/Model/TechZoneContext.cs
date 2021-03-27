@@ -25,8 +25,8 @@ namespace DataBase.Model
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Server=ITECH-PC\SQLEXPRESS19;Database=TechZone;Trusted_Connection=True;");
-                //optionsBuilder.UseSqlServer(@"Server=.;Database=TechZone;Trusted_Connection=True;");
+                //optionsBuilder.UseSqlServer(@"Server=ITECH-PC\SQLEXPRESS19;Database=TechZone;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=.;Database=TechZone;Trusted_Connection=True;");
             }
         }
 

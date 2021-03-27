@@ -53,25 +53,34 @@ namespace iTech
                     Repair = x.Repair
                 })
                 .ToList();
-
+            //EditIncomeDataGridView.AutoGenerateColumns = false;
             EditIncomeDataGridView.DataSource = null;
             EditIncomeDataGridView.DataSource = dateIncomeList;
             EditIncomeDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
             EditIncomeDataGridView.DefaultCellStyle.ForeColor = Color.Black;
             EditIncomeDataGridView.EnableHeadersVisualStyles = false;
-
+            EditIncomeDataGridView.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            EditIncomeDataGridView.Columns[0].Width = 60;
             EditIncomeDataGridView.Columns[0].HeaderText = "ID";
             EditIncomeDataGridView.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             EditIncomeDataGridView.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            EditIncomeDataGridView.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            EditIncomeDataGridView.Columns[1].Width = 118;
             EditIncomeDataGridView.Columns[1].HeaderText = "Дата";
             EditIncomeDataGridView.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             EditIncomeDataGridView.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            EditIncomeDataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            EditIncomeDataGridView.Columns[2].Width = 50;
             EditIncomeDataGridView.Columns[2].HeaderText = "User";
             EditIncomeDataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            EditIncomeDataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            EditIncomeDataGridView.Columns[3].Width = 380;
             EditIncomeDataGridView.Columns[3].HeaderText = "Артикул";
             EditIncomeDataGridView.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            EditIncomeDataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            EditIncomeDataGridView.Columns[4].HeaderText = "Количество";
+            EditIncomeDataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            EditIncomeDataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            EditIncomeDataGridView.Columns[4].Width = 55;
+            EditIncomeDataGridView.Columns[4].HeaderText = "Брой";
             EditIncomeDataGridView.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             EditIncomeDataGridView.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             EditIncomeDataGridView.Columns[5].HeaderText = "Цена";
@@ -80,7 +89,7 @@ namespace iTech
             EditIncomeDataGridView.Columns[6].HeaderText = "Ремонт";
             EditIncomeDataGridView.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             EditIncomeDataGridView.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+           
 
         }
 
@@ -105,15 +114,27 @@ namespace iTech
 
                     if (EditPrice.Text != "")
                     {
-                        priceString = EditPrice.Text.ToString();
+                        if (EditPrice.Text != "." && EditPrice.Text != ",")
+                        {
+                            priceString = EditPrice.Text.ToString();
+                        }
+                        
                     }
                     if (EditRepair.Text != "")
                     {
-                        repairString = EditRepair.Text.ToString();
+                        if (EditRepair.Text != "." && EditRepair.Text != ",")
+                        {
+                            repairString = EditRepair.Text.ToString();
+                        }
+                        
                     }
                     if (EditQwantity.Text != "")
                     {
-                        quantityString = EditQwantity.Text.ToString();
+                        if (EditQwantity.Text != "." && EditQwantity.Text != ",")
+                        {
+                            quantityString = EditQwantity.Text.ToString();
+                        }
+                       
                     }
 
                     for (int i = 0; i < priceString.Length; i++)
@@ -202,6 +223,98 @@ namespace iTech
             }
                 
 
+        }
+
+        private void EditArticle_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                EditQwantity.Select();
+            }
+        }
+
+        private void EditQwantity_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                EditPrice.Select();
+            }
+        }
+
+        private void EditPrice_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                EditRepair.Select();
+            }
+        }
+
+        private void EditRepair_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                EditButton_Click(sender, e);
+            }
+        }
+        private void EditButton_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                EditButton_Click(sender, e);
+            }
+        }
+
+        private void EditQwantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+        private void EditRepair_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+        private void EditPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

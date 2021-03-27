@@ -62,7 +62,7 @@ namespace iTech
         {
             incomeList.Clear();
 
-            var dateNow = DateTime.Now.Date;          
+            var dateNow = DateTime.Now.Date;
 
             incomeList = techzone.Incomes
                  .Where(x => x.Date == dateNow)
@@ -87,7 +87,7 @@ namespace iTech
         {
 
         }
-  
+
         private void submit_Click(object sender, EventArgs e)
         {
             if (articleBox.Text != "")
@@ -98,15 +98,26 @@ namespace iTech
 
                 if (priceBox.Text != "")
                 {
-                    priceString = priceBox.Text.ToString();
+                    if (priceBox.Text != "." && priceBox.Text != ",")
+                    {
+                        priceString = priceBox.Text.ToString();
+                    }
+
                 }
                 if (repairBox.Text != "")
                 {
-                    repairString = repairBox.Text.ToString();
+                    if (repairBox.Text != "." && repairBox.Text != ",")
+                    {
+                        repairString = repairBox.Text.ToString();
+                    }
                 }
                 if (quantityBox.Text != "")
                 {
-                    quantityString = quantityBox.Text.ToString();
+                    if (quantityBox.Text != "." && quantityBox.Text != ",")
+                    {
+                        quantityString = quantityBox.Text.ToString();
+                    }
+                    
                 }
 
                 for (int i = 0; i < priceString.Length; i++)
@@ -131,10 +142,10 @@ namespace iTech
                 var entity = new Income
                 {
                     Date = DateTime.Now,
-                   Article = articleBox.Text,
-                   Quantity = int.Parse(quantityString),
-                   Price = decimal.Parse(priceString),
-                   Repair = decimal.Parse(repairString)
+                    Article = articleBox.Text,
+                    Quantity = int.Parse(quantityString),
+                    Price = decimal.Parse(priceString),
+                    Repair = decimal.Parse(repairString)
                 };
 
 
@@ -144,7 +155,7 @@ namespace iTech
             {
                 articleBox.Select();
             }
-           
+
         }
 
         private void SaveLineIncome(Income entity)
@@ -154,13 +165,13 @@ namespace iTech
 
             sum.Text = IncomForDay();
             GetRefferenceIncomeBoxData();
- 
+
             cashBox.Text = GetCash();
             articleBox.Text = "";
             quantityBox.Text = "1";
             priceBox.Text = "0";
             repairBox.Text = "0";
-            
+
         }
 
         private void GetRefferenceIncomeBoxData()
@@ -168,9 +179,15 @@ namespace iTech
             refferenceIncomeBox.DataSource = null;
             List<RefIncome> list = GetIncomsForDay();
             refferenceIncomeBox.DataSource = list;
-            refferenceIncomeBox.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;      
+            refferenceIncomeBox.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
+            refferenceIncomeBox.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            refferenceIncomeBox.Columns[0].Width = 118;
             refferenceIncomeBox.Columns[0].HeaderText = "Дата";
+            refferenceIncomeBox.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            refferenceIncomeBox.Columns[1].Width = 480;
             refferenceIncomeBox.Columns[1].HeaderText = "Артикул";
+            refferenceIncomeBox.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            refferenceIncomeBox.Columns[2].Width = 60;
             refferenceIncomeBox.Columns[2].HeaderText = "Брой";
             refferenceIncomeBox.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             refferenceIncomeBox.Columns[3].HeaderText = "Цена";
@@ -187,8 +204,13 @@ namespace iTech
         {
             refferenceCostBox.DataSource = null;
             List<RefCost> list = GetCostForDay();
-            refferenceCostBox.DataSource = list;         
+            refferenceCostBox.DataSource = list;
+            refferenceCostBox.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
+            refferenceCostBox.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            refferenceCostBox.Columns[0].Width = 118;
             refferenceCostBox.Columns[0].HeaderText = "Дата";
+            refferenceCostBox.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            refferenceCostBox.Columns[1].Width = 600;
             refferenceCostBox.Columns[1].HeaderText = "Име";
             refferenceCostBox.Columns[2].HeaderText = "Сума";
             refferenceCostBox.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -204,7 +226,7 @@ namespace iTech
                 e.Handled = true;
                 e.SuppressKeyPress = true;
                 quantityBox.Select();
-            }  
+            }
         }
 
         private void quantityBox_KeyDown(object sender, KeyEventArgs e)
@@ -278,7 +300,11 @@ namespace iTech
                 string costSumString = "0";
                 if (costSumBox.Text != "")
                 {
-                    costSumString = costSumBox.Text.ToString();
+                    if (costSumBox.Text != "." && costSumBox.Text != ",")
+                    {
+                        costSumString = costSumBox.Text.ToString();
+                    }
+                    
                 }
 
                 for (int i = 0; i < costSumString.Length; i++)
@@ -304,8 +330,8 @@ namespace iTech
             {
                 costNameBox.Select();
             }
-            
-            
+
+
         }
 
         private void costSubmit_KeyDown(object sender, KeyEventArgs e)
@@ -326,7 +352,7 @@ namespace iTech
 
             costForDayBox.Text = CostForDay();
             GetRefferenceCostBoxData();
-     
+
             cashBox.Text = GetCash();
             costNameBox.Text = "";
             costSumBox.Text = "0";
@@ -336,13 +362,13 @@ namespace iTech
         {
 
             decimal sum = 0;
-    
+
             var dateNow = DateTime.Now.Date;
 
             var costs = techzone.Costs
                 .Where(x => x.Date == dateNow)
                 .Select(x => x.Sum)
-                 .ToList()                 
+                 .ToList()
                  .Sum();
 
             sum = (decimal)costs;
@@ -354,13 +380,13 @@ namespace iTech
         {
             decimal sum = 0;
             decimal incomeSum = 0;
-            decimal repairSum = 0;           
+            decimal repairSum = 0;
 
             var dateNow = DateTime.Now.Date;
 
-           var entitys = techzone.Incomes
-                .Where(x => x.Date == dateNow)
-                .ToList();
+            var entitys = techzone.Incomes
+                 .Where(x => x.Date == dateNow)
+                 .ToList();
 
             foreach (var entity in entitys)
             {
@@ -440,7 +466,7 @@ namespace iTech
             DateTime startDate = DateTime.Parse(dateStart.Text);
             DateTime endDate = DateTime.Parse(dateEnd.Text);
             dateIncomeList.Clear();
-     
+
             decimal sumIncome = 0;
             decimal sumRepair = 0;
 
@@ -462,35 +488,35 @@ namespace iTech
                 sumRepair += (decimal)(entity.Quantity * entity.Repair);
             }
 
-                dateBox.DataSource = null;
-                dateBox.DataSource = dateIncomeList;
-                dateBox.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
-                dateBox.DefaultCellStyle.ForeColor = Color.Black;
-                dateBox.EnableHeadersVisualStyles = false;
-                dateBox.Columns[0].Width = 118;
-                dateBox.Columns[0].HeaderText = "Дата";
-                dateBox.Columns[1].Width = 340;
-                dateBox.Columns[1].HeaderText = "Артикул";
-                dateBox.Columns[2].Width = 60;
-                dateBox.Columns[2].HeaderText = "Брой";
-                dateBox.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                dateBox.Columns[3].HeaderText = "Цена";
-                dateBox.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dateBox.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dateBox.Columns[4].HeaderText = "Ремонт";
-                dateBox.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dateBox.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-                dateIncomeBox.Text = sumIncome.ToString();
-                dateRepairBox.Text = sumRepair.ToString();
-                totalBox.Text = (sumIncome + sumRepair).ToString();
-        
+            dateBox.DataSource = null;
+            dateBox.DataSource = dateIncomeList;
+            dateBox.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
+            dateBox.DefaultCellStyle.ForeColor = Color.Black;
+            dateBox.EnableHeadersVisualStyles = false;
+            dateBox.Columns[0].Width = 118;
+            dateBox.Columns[0].HeaderText = "Дата";
+            dateBox.Columns[1].Width = 340;
+            dateBox.Columns[1].HeaderText = "Артикул";
+            dateBox.Columns[2].Width = 60;
+            dateBox.Columns[2].HeaderText = "Брой";
+            dateBox.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dateBox.Columns[3].HeaderText = "Цена";
+            dateBox.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dateBox.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dateBox.Columns[4].HeaderText = "Ремонт";
+            dateBox.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dateBox.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dateIncomeBox.Text = sumIncome.ToString();
+            dateRepairBox.Text = sumRepair.ToString();
+            totalBox.Text = (sumIncome + sumRepair).ToString();
+
 
         }
         private void MakeReference2_Click(object sender, EventArgs e)
         {
             DateTime startDate = DateTime.Parse(dateStart.Text);
             DateTime endDate = DateTime.Parse(dateEnd.Text);
-            dateCostList.Clear();                   
+            dateCostList.Clear();
             decimal sumIncome = 0;
             decimal sumRepair = 0;
             decimal sumCost = 0;
@@ -535,7 +561,7 @@ namespace iTech
             decimal incomeSum = 0;
             decimal repairSum = 0;
 
-            var incoms = techzone.Incomes                 
+            var incoms = techzone.Incomes
                  .ToList();
 
             foreach (var incom in incoms)
@@ -642,7 +668,7 @@ namespace iTech
         private void cash2InButton_Click(object sender, EventArgs e)
         {
             if (cash2InBox.Text != "")
-            {              
+            {
                 string cash2 = cash2InBox.Text.ToString();
 
                 for (int i = 0; i < cash2.Length; i++)
@@ -698,7 +724,7 @@ namespace iTech
                         cash2 = c2Str1 + '.' + c2Str2;
                     }
                 }
-              
+
                 decimal cash2Sum = decimal.Parse(cash2);
 
                 var entity = new Cash2
@@ -750,6 +776,7 @@ namespace iTech
 
             sum.Text = IncomForDay();
             GetRefferenceIncomeBoxData();
+            makeReference_Click(sender, e);
 
             cashBox.Text = GetCash();
             articleBox.Text = "";

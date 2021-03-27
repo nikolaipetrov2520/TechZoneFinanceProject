@@ -69,31 +69,42 @@ namespace iTech
             // 
             // EditArticle
             // 
+            this.EditArticle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.EditArticle.Location = new System.Drawing.Point(87, 354);
             this.EditArticle.Name = "EditArticle";
             this.EditArticle.Size = new System.Drawing.Size(512, 31);
             this.EditArticle.TabIndex = 2;
+            this.EditArticle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditArticle_KeyDown);
             // 
             // EditQwantity
             // 
+            this.EditQwantity.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.EditQwantity.Location = new System.Drawing.Point(620, 354);
             this.EditQwantity.Name = "EditQwantity";
             this.EditQwantity.Size = new System.Drawing.Size(30, 31);
             this.EditQwantity.TabIndex = 3;
+            this.EditQwantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditQwantity_KeyDown);
+            this.EditQwantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditQwantity_KeyPress);
             // 
             // EditPrice
             // 
+            this.EditPrice.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.EditPrice.Location = new System.Drawing.Point(670, 354);
             this.EditPrice.Name = "EditPrice";
             this.EditPrice.Size = new System.Drawing.Size(100, 31);
             this.EditPrice.TabIndex = 4;
+            this.EditPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditPrice_KeyDown);
+            this.EditPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditPrice_KeyPress);
             // 
             // EditRepair
             // 
+            this.EditRepair.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.EditRepair.Location = new System.Drawing.Point(792, 354);
             this.EditRepair.Name = "EditRepair";
             this.EditRepair.Size = new System.Drawing.Size(100, 31);
             this.EditRepair.TabIndex = 5;
+            this.EditRepair.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditRepair_KeyDown);
+            this.EditRepair.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditRepair_KeyPress);
             // 
             // EditButton
             // 
@@ -105,6 +116,7 @@ namespace iTech
             this.EditButton.Text = "Редактиране";
             this.EditButton.UseVisualStyleBackColor = false;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            this.EditButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditButton_KeyDown);
             // 
             // DeleteButton
             // 
