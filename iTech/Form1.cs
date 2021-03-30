@@ -548,7 +548,7 @@ namespace iTech
             dateBox.Columns[1].HeaderText = "Разход";
             dateBox.Columns[2].HeaderText = "Сума";
             dateBox.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dateBox.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dateBox.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dateIncomeBox.Text = sumIncome.ToString();
             dateRepairBox.Text = sumRepair.ToString();
             totalBox.Text = sumCost.ToString();
@@ -785,6 +785,27 @@ namespace iTech
             repairBox.Text = "0";
 
             edit.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DateTime startDate = DateTime.Parse(dateStart.Text);
+            DateTime endDate = DateTime.Parse(dateEnd.Text);
+
+            CostEdit costEdit = new CostEdit(startDate, endDate, techzone);
+            DialogResult dialogresult = costEdit.ShowDialog();
+
+            sum.Text = IncomForDay();
+            GetRefferenceIncomeBoxData();
+            MakeReference2_Click(sender, e);
+
+            cashBox.Text = GetCash();
+            articleBox.Text = "";
+            quantityBox.Text = "1";
+            priceBox.Text = "0";
+            repairBox.Text = "0";
+
+            costEdit.Dispose();
         }
     }
 }

@@ -53,7 +53,6 @@ namespace iTech
                     Repair = x.Repair
                 })
                 .ToList();
-            //EditIncomeDataGridView.AutoGenerateColumns = false;
             EditIncomeDataGridView.DataSource = null;
             EditIncomeDataGridView.DataSource = dateIncomeList;
             EditIncomeDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
@@ -85,10 +84,10 @@ namespace iTech
             EditIncomeDataGridView.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             EditIncomeDataGridView.Columns[5].HeaderText = "Цена";
             EditIncomeDataGridView.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            EditIncomeDataGridView.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            EditIncomeDataGridView.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             EditIncomeDataGridView.Columns[6].HeaderText = "Ремонт";
             EditIncomeDataGridView.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            EditIncomeDataGridView.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            EditIncomeDataGridView.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
            
 
         }
@@ -172,9 +171,9 @@ namespace iTech
                         makeReference();
 
                         EditArticle.Text = "";
-                        EditQwantity.Text = "1";
-                        EditPrice.Text = "0";
-                        EditRepair.Text = "0";
+                        EditQwantity.Text = "";
+                        EditPrice.Text = "";
+                        EditRepair.Text = "";
                         editId = 0;
 
                         MessageBox.Show("Редактирахте успешно Записа");
@@ -209,9 +208,9 @@ namespace iTech
                     makeReference();
 
                     EditArticle.Text = "";
-                    EditQwantity.Text = "1";
-                    EditPrice.Text = "0";
-                    EditRepair.Text = "0";
+                    EditQwantity.Text = "";
+                    EditPrice.Text = "";
+                    EditRepair.Text = "";
                     editId = 0;
 
                     MessageBox.Show("Изтрихте успешно Записа");
@@ -264,6 +263,7 @@ namespace iTech
                 EditButton_Click(sender, e);
             }
         }
+
         private void EditButton_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

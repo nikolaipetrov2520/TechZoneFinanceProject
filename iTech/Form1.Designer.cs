@@ -44,6 +44,11 @@
             this.costReferenceBox = new System.Windows.Forms.TextBox();
             this.costReferenceLabel = new System.Windows.Forms.Label();
             this.reference3 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.CostLabel = new System.Windows.Forms.Label();
+            this.IncomLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.EditButton = new System.Windows.Forms.Button();
             this.MakeReference2 = new System.Windows.Forms.Button();
             this.dateBox = new System.Windows.Forms.DataGridView();
@@ -258,6 +263,11 @@
             // reference3
             // 
             this.reference3.BackColor = System.Drawing.Color.SteelBlue;
+            this.reference3.Controls.Add(this.label2);
+            this.reference3.Controls.Add(this.CostLabel);
+            this.reference3.Controls.Add(this.IncomLabel);
+            this.reference3.Controls.Add(this.label1);
+            this.reference3.Controls.Add(this.button1);
             this.reference3.Controls.Add(this.EditButton);
             this.reference3.Controls.Add(this.MakeReference2);
             this.reference3.Controls.Add(this.dateBox);
@@ -280,14 +290,63 @@
             this.reference3.TabIndex = 2;
             this.reference3.Text = "Справка по дати";
             // 
+            // label2
+            // 
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(93, 320);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(300, 2);
+            this.label2.TabIndex = 20;
+            // 
+            // CostLabel
+            // 
+            this.CostLabel.AutoSize = true;
+            this.CostLabel.Location = new System.Drawing.Point(315, 120);
+            this.CostLabel.Name = "CostLabel";
+            this.CostLabel.Size = new System.Drawing.Size(78, 25);
+            this.CostLabel.TabIndex = 19;
+            this.CostLabel.Text = "Разходи";
+            // 
+            // IncomLabel
+            // 
+            this.IncomLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.IncomLabel.AutoSize = true;
+            this.IncomLabel.Location = new System.Drawing.Point(80, 120);
+            this.IncomLabel.Name = "IncomLabel";
+            this.IncomLabel.Size = new System.Drawing.Size(85, 25);
+            this.IncomLabel.TabIndex = 18;
+            this.IncomLabel.Text = "Приходи";
+            // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.Location = new System.Drawing.Point(240, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(2, 180);
+            this.label1.TabIndex = 17;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(297, 234);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(117, 45);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Редактиране";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // EditButton
             // 
             this.EditButton.BackColor = System.Drawing.Color.DimGray;
+            this.EditButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.EditButton.Location = new System.Drawing.Point(66, 234);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(117, 45);
             this.EditButton.TabIndex = 15;
-            this.EditButton.Text = "Edit";
+            this.EditButton.Text = "Редактиране";
             this.EditButton.UseVisualStyleBackColor = false;
             this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
@@ -295,11 +354,11 @@
             // 
             this.MakeReference2.BackColor = System.Drawing.Color.DimGray;
             this.MakeReference2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MakeReference2.Location = new System.Drawing.Point(297, 133);
+            this.MakeReference2.Location = new System.Drawing.Point(297, 161);
             this.MakeReference2.Name = "MakeReference2";
             this.MakeReference2.Size = new System.Drawing.Size(117, 48);
             this.MakeReference2.TabIndex = 14;
-            this.MakeReference2.Text = "Разходи";
+            this.MakeReference2.Text = "Преглед";
             this.MakeReference2.UseVisualStyleBackColor = false;
             this.MakeReference2.Click += new System.EventHandler(this.MakeReference2_Click);
             // 
@@ -340,18 +399,18 @@
             // 
             this.makeReference.BackColor = System.Drawing.Color.DimGray;
             this.makeReference.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.makeReference.Location = new System.Drawing.Point(66, 133);
+            this.makeReference.Location = new System.Drawing.Point(66, 161);
             this.makeReference.Name = "makeReference";
             this.makeReference.Size = new System.Drawing.Size(117, 48);
             this.makeReference.TabIndex = 10;
-            this.makeReference.Text = "Приходи";
+            this.makeReference.Text = "Преглед";
             this.makeReference.UseVisualStyleBackColor = false;
             this.makeReference.Click += new System.EventHandler(this.makeReference_Click);
             // 
             // dateRepair
             // 
             this.dateRepair.AutoSize = true;
-            this.dateRepair.Location = new System.Drawing.Point(315, 316);
+            this.dateRepair.Location = new System.Drawing.Point(310, 344);
             this.dateRepair.Name = "dateRepair";
             this.dateRepair.Size = new System.Drawing.Size(82, 25);
             this.dateRepair.TabIndex = 8;
@@ -360,7 +419,7 @@
             // dateIncome
             // 
             this.dateIncome.AutoSize = true;
-            this.dateIncome.Location = new System.Drawing.Point(66, 316);
+            this.dateIncome.Location = new System.Drawing.Point(61, 344);
             this.dateIncome.Name = "dateIncome";
             this.dateIncome.Size = new System.Drawing.Size(99, 25);
             this.dateIncome.TabIndex = 7;
@@ -371,7 +430,7 @@
             this.dateRepairBox.BackColor = System.Drawing.Color.Gainsboro;
             this.dateRepairBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dateRepairBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateRepairBox.Location = new System.Drawing.Point(297, 367);
+            this.dateRepairBox.Location = new System.Drawing.Point(292, 395);
             this.dateRepairBox.Name = "dateRepairBox";
             this.dateRepairBox.ReadOnly = true;
             this.dateRepairBox.Size = new System.Drawing.Size(122, 43);
@@ -383,7 +442,7 @@
             this.dateIncomeBox.BackColor = System.Drawing.Color.Gainsboro;
             this.dateIncomeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dateIncomeBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateIncomeBox.Location = new System.Drawing.Point(57, 367);
+            this.dateIncomeBox.Location = new System.Drawing.Point(52, 395);
             this.dateIncomeBox.Name = "dateIncomeBox";
             this.dateIncomeBox.ReadOnly = true;
             this.dateIncomeBox.Size = new System.Drawing.Size(131, 43);
@@ -395,9 +454,9 @@
             this.referanceDate.AutoSize = true;
             this.referanceDate.Location = new System.Drawing.Point(758, 24);
             this.referanceDate.Name = "referanceDate";
-            this.referanceDate.Size = new System.Drawing.Size(196, 25);
+            this.referanceDate.Size = new System.Drawing.Size(177, 25);
             this.referanceDate.TabIndex = 4;
-            this.referanceDate.Text = "Продажби за периода";
+            this.referanceDate.Text = "Резултат за периода";
             // 
             // dateEndLabel
             // 
@@ -953,6 +1012,11 @@
         private System.Windows.Forms.DataGridView dateBox;
         private System.Windows.Forms.Button MakeReference2;
         private System.Windows.Forms.Button EditButton;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label CostLabel;
+        private System.Windows.Forms.Label IncomLabel;
     }
 }
 

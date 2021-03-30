@@ -151,7 +151,7 @@ namespace iTech
             this.MinimizeBox = false;
             this.Name = "Edit";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Edit";
+            this.Text = "Редактиране на Приходи";
             ((System.ComponentModel.ISupportInitialize)(this.EditIncomeDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
