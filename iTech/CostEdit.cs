@@ -208,5 +208,23 @@ namespace iTech
                 e.Handled = true;
             }
         }
+
+        private void EditCostDataGridView_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                EditCostDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Gainsboro;
+
+            }
+        }
+
+        private void EditCostDataGridView_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                EditCostDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+
+            }
+        }
     }
 }

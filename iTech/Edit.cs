@@ -316,5 +316,23 @@ namespace iTech
                 e.Handled = true;
             }
         }
+
+        private void EditIncomeDataGridView_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                EditIncomeDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Gainsboro;
+
+            }
+        }
+
+        private void EditIncomeDataGridView_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                EditIncomeDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+
+            }
+        }
     }
 }

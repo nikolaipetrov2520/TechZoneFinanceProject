@@ -31,6 +31,12 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.TabPage tab5;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(iTech));
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.reference1 = new System.Windows.Forms.TabPage();
@@ -158,14 +164,34 @@
             // 
             this.refferenceIncomeBox.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.refferenceIncomeBox.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.refferenceIncomeBox.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.refferenceIncomeBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.refferenceIncomeBox.DefaultCellStyle = dataGridViewCellStyle2;
             this.refferenceIncomeBox.GridColor = System.Drawing.Color.Silver;
             this.refferenceIncomeBox.Location = new System.Drawing.Point(188, 46);
             this.refferenceIncomeBox.Name = "refferenceIncomeBox";
             this.refferenceIncomeBox.ReadOnly = true;
+            this.refferenceIncomeBox.RowHeadersVisible = false;
+            this.refferenceIncomeBox.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.refferenceIncomeBox.Size = new System.Drawing.Size(908, 387);
             this.refferenceIncomeBox.TabIndex = 5;
             this.refferenceIncomeBox.Text = "dataGridView1";
+            this.refferenceIncomeBox.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.refferenceIncomeBox_CellMouseLeave);
+            this.refferenceIncomeBox.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.refferenceIncomeBox_CellMouseMove);
             // 
             // incomeRepairBox
             // 
@@ -229,14 +255,34 @@
             // 
             this.refferenceCostBox.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.refferenceCostBox.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.refferenceCostBox.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.refferenceCostBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.refferenceCostBox.DefaultCellStyle = dataGridViewCellStyle4;
             this.refferenceCostBox.GridColor = System.Drawing.Color.Silver;
             this.refferenceCostBox.Location = new System.Drawing.Point(188, 46);
             this.refferenceCostBox.Name = "refferenceCostBox";
             this.refferenceCostBox.ReadOnly = true;
+            this.refferenceCostBox.RowHeadersVisible = false;
+            this.refferenceCostBox.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.refferenceCostBox.Size = new System.Drawing.Size(908, 387);
             this.refferenceCostBox.TabIndex = 3;
             this.refferenceCostBox.Text = "dataGridView1";
+            this.refferenceCostBox.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.refferenceCostBox_CellMouseLeave);
+            this.refferenceCostBox.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.refferenceCostBox_CellMouseMove);
             // 
             // costReferenceBox
             // 
@@ -366,13 +412,34 @@
             // 
             this.dateBox.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dateBox.BackgroundColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dateBox.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dateBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dateBox.DefaultCellStyle = dataGridViewCellStyle6;
             this.dateBox.Location = new System.Drawing.Point(481, 63);
             this.dateBox.Name = "dateBox";
             this.dateBox.ReadOnly = true;
+            this.dateBox.RowHeadersVisible = false;
+            this.dateBox.RowHeadersWidth = 5;
+            this.dateBox.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dateBox.Size = new System.Drawing.Size(778, 474);
             this.dateBox.TabIndex = 13;
             this.dateBox.Text = "dataGridView1";
+            this.dateBox.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dateBox_CellMouseLeave);
+            this.dateBox.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dateBox_CellMouseMove);
             // 
             // totalBox
             // 

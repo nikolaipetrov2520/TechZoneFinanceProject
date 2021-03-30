@@ -184,7 +184,7 @@ namespace iTech
             refferenceIncomeBox.Columns[0].Width = 118;
             refferenceIncomeBox.Columns[0].HeaderText = "Дата";
             refferenceIncomeBox.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            refferenceIncomeBox.Columns[1].Width = 480;
+            refferenceIncomeBox.Columns[1].Width = 521;
             refferenceIncomeBox.Columns[1].HeaderText = "Артикул";
             refferenceIncomeBox.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             refferenceIncomeBox.Columns[2].Width = 60;
@@ -210,7 +210,7 @@ namespace iTech
             refferenceCostBox.Columns[0].Width = 118;
             refferenceCostBox.Columns[0].HeaderText = "Дата";
             refferenceCostBox.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            refferenceCostBox.Columns[1].Width = 600;
+            refferenceCostBox.Columns[1].Width = 641;
             refferenceCostBox.Columns[1].HeaderText = "Име";
             refferenceCostBox.Columns[2].HeaderText = "Сума";
             refferenceCostBox.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -495,7 +495,7 @@ namespace iTech
             dateBox.EnableHeadersVisualStyles = false;
             dateBox.Columns[0].Width = 118;
             dateBox.Columns[0].HeaderText = "Дата";
-            dateBox.Columns[1].Width = 340;
+            dateBox.Columns[1].Width = 381;
             dateBox.Columns[1].HeaderText = "Артикул";
             dateBox.Columns[2].Width = 60;
             dateBox.Columns[2].HeaderText = "Брой";
@@ -544,7 +544,7 @@ namespace iTech
             dateBox.EnableHeadersVisualStyles = false;
             dateBox.Columns[0].Width = 118;
             dateBox.Columns[0].HeaderText = "Дата";
-            dateBox.Columns[1].Width = 500;
+            dateBox.Columns[1].Width = 541;
             dateBox.Columns[1].HeaderText = "Разход";
             dateBox.Columns[2].HeaderText = "Сума";
             dateBox.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -806,6 +806,61 @@ namespace iTech
             repairBox.Text = "0";
 
             costEdit.Dispose();
+        }
+
+        private void dateBox_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                dateBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Gainsboro;
+              
+            }
+        }
+
+        private void dateBox_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                dateBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+               
+            }
+            
+        }
+
+        private void refferenceIncomeBox_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                refferenceIncomeBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Gainsboro;
+
+            }
+        }
+
+        private void refferenceIncomeBox_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                refferenceIncomeBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+
+            }
+        }
+
+        private void refferenceCostBox_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                refferenceCostBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Gainsboro;
+
+            }
+        }
+
+        private void refferenceCostBox_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                refferenceCostBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+
+            }
         }
     }
 }
