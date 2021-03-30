@@ -77,6 +77,8 @@
             this.dateStart = new System.Windows.Forms.DateTimePicker();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tab1 = new System.Windows.Forms.TabPage();
+            this.PaymantLabel = new System.Windows.Forms.Label();
+            this.PaymantComboBox = new System.Windows.Forms.ComboBox();
             this.sum = new System.Windows.Forms.TextBox();
             this.sumLabel = new System.Windows.Forms.Label();
             this.submit = new System.Windows.Forms.Button();
@@ -615,6 +617,8 @@
             // tab1
             // 
             this.tab1.BackColor = System.Drawing.Color.SteelBlue;
+            this.tab1.Controls.Add(this.PaymantLabel);
+            this.tab1.Controls.Add(this.PaymantComboBox);
             this.tab1.Controls.Add(this.sum);
             this.tab1.Controls.Add(this.sumLabel);
             this.tab1.Controls.Add(this.submit);
@@ -634,6 +638,27 @@
             this.tab1.Size = new System.Drawing.Size(1322, 631);
             this.tab1.TabIndex = 1;
             this.tab1.Text = "Приход";
+            // 
+            // PaymantLabel
+            // 
+            this.PaymantLabel.AutoSize = true;
+            this.PaymantLabel.Location = new System.Drawing.Point(361, 176);
+            this.PaymantLabel.Name = "PaymantLabel";
+            this.PaymantLabel.Size = new System.Drawing.Size(118, 25);
+            this.PaymantLabel.TabIndex = 12;
+            this.PaymantLabel.Text = "Вид плащане";
+            // 
+            // PaymantComboBox
+            // 
+            this.PaymantComboBox.FormattingEnabled = true;
+            this.PaymantComboBox.Items.AddRange(new object[] {
+            "В Брой",
+            "POS"});
+            this.PaymantComboBox.Location = new System.Drawing.Point(361, 215);
+            this.PaymantComboBox.Name = "PaymantComboBox";
+            this.PaymantComboBox.Size = new System.Drawing.Size(121, 31);
+            this.PaymantComboBox.TabIndex = 11;
+            this.PaymantComboBox.Text = "В Брой";
             // 
             // sum
             // 
@@ -1121,6 +1146,8 @@
         private System.Windows.Forms.Label IncomLabel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label PaymantLabel;
+        private System.Windows.Forms.ComboBox PaymantComboBox;
     }
 }
 

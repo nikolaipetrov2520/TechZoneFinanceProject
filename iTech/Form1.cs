@@ -90,71 +90,79 @@ namespace iTech
 
         private void submit_Click(object sender, EventArgs e)
         {
-            if (articleBox.Text != "")
+            if (PaymantComboBox.Text == "В Брой")
             {
-                string priceString = "0";
-                string repairString = "0";
-                string quantityString = "1";
-
-                if (priceBox.Text != "")
+                if (articleBox.Text != "")
                 {
-                    if (priceBox.Text != "." && priceBox.Text != ",")
+                    string priceString = "0";
+                    string repairString = "0";
+                    string quantityString = "1";
+
+                    if (priceBox.Text != "")
                     {
-                        priceString = priceBox.Text.ToString();
+                        if (priceBox.Text != "." && priceBox.Text != ",")
+                        {
+                            priceString = priceBox.Text.ToString();
+                        }
+
+                    }
+                    if (repairBox.Text != "")
+                    {
+                        if (repairBox.Text != "." && repairBox.Text != ",")
+                        {
+                            repairString = repairBox.Text.ToString();
+                        }
+                    }
+                    if (quantityBox.Text != "")
+                    {
+                        if (quantityBox.Text != "." && quantityBox.Text != ",")
+                        {
+                            quantityString = quantityBox.Text.ToString();
+                        }
+
                     }
 
-                }
-                if (repairBox.Text != "")
-                {
-                    if (repairBox.Text != "." && repairBox.Text != ",")
+                    for (int i = 0; i < priceString.Length; i++)
                     {
-                        repairString = repairBox.Text.ToString();
+                        if (priceString[i] == ',')
+                        {
+                            string priStr1 = priceString.Substring(0, i);
+                            string priStr2 = priceString.Substring(i + 1);
+                            priceString = priStr1 + '.' + priStr2;
+                        }
                     }
-                }
-                if (quantityBox.Text != "")
-                {
-                    if (quantityBox.Text != "." && quantityBox.Text != ",")
+                    for (int i = 0; i < repairString.Length; i++)
                     {
-                        quantityString = quantityBox.Text.ToString();
+                        if (repairString[i] == ',')
+                        {
+                            string repStr1 = repairString.Substring(0, i);
+                            string repStr2 = repairString.Substring(i + 1);
+                            repairString = repStr1 + '.' + repStr2;
+                        }
                     }
-                    
-                }
 
-                for (int i = 0; i < priceString.Length; i++)
-                {
-                    if (priceString[i] == ',')
+                    var entity = new Income
                     {
-                        string priStr1 = priceString.Substring(0, i);
-                        string priStr2 = priceString.Substring(i + 1);
-                        priceString = priStr1 + '.' + priStr2;
-                    }
-                }
-                for (int i = 0; i < repairString.Length; i++)
-                {
-                    if (repairString[i] == ',')
-                    {
-                        string repStr1 = repairString.Substring(0, i);
-                        string repStr2 = repairString.Substring(i + 1);
-                        repairString = repStr1 + '.' + repStr2;
-                    }
-                }
-
-                var entity = new Income
-                {
-                    Date = DateTime.Now,
-                    Article = articleBox.Text,
-                    Quantity = int.Parse(quantityString),
-                    Price = decimal.Parse(priceString),
-                    Repair = decimal.Parse(repairString)
-                };
+                        Date = DateTime.Now,
+                        Article = articleBox.Text,
+                        Quantity = int.Parse(quantityString),
+                        Price = decimal.Parse(priceString),
+                        Repair = decimal.Parse(repairString)
+                    };
 
 
-                SaveLineIncome(entity);
+                    SaveLineIncome(entity);
+                }
+                else
+                {
+                    articleBox.Select();
+                }
             }
-            else
+            else if (PaymantComboBox.Text == "POS")
             {
-                articleBox.Select();
+
             }
+           
 
         }
 
