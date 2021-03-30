@@ -328,11 +328,20 @@ namespace iTech
 
         private void EditIncomeDataGridView_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex > -1)
             {
-                EditIncomeDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                if (e.RowIndex % 2 == 0)
+                {
+                    EditIncomeDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                }
+                else
+                {
+                    EditIncomeDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightBlue;
+                }
 
             }
+      
         }
     }
 }

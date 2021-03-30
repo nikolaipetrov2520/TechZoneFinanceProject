@@ -821,8 +821,15 @@ namespace iTech
         {
             if (e.RowIndex > -1)
             {
-                dateBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
-               
+                if (e.RowIndex % 2 == 0)
+                {
+                    dateBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                }
+                else
+                {
+                    dateBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightBlue;
+                }                
+                              
             }
             
         }
@@ -840,9 +847,17 @@ namespace iTech
         {
             if (e.RowIndex > -1)
             {
-                refferenceIncomeBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                if (e.RowIndex % 2 == 0)
+                {
+                    refferenceIncomeBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                }
+                else
+                {
+                    refferenceIncomeBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightBlue;
+                }
 
             }
+          
         }
 
         private void refferenceCostBox_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
@@ -858,9 +873,17 @@ namespace iTech
         {
             if (e.RowIndex > -1)
             {
-                refferenceCostBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                if (e.RowIndex % 2 == 0)
+                {
+                    refferenceCostBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                }
+                else
+                {
+                    refferenceCostBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightBlue;
+                }
 
             }
+         
         }
     }
 }

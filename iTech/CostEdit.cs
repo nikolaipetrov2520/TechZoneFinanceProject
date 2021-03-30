@@ -220,11 +220,20 @@ namespace iTech
 
         private void EditCostDataGridView_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
         {
+
             if (e.RowIndex > -1)
             {
-                EditCostDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                if (e.RowIndex % 2 == 0)
+                {
+                    EditCostDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.White;
+                }
+                else
+                {
+                    EditCostDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightBlue;
+                }
 
             }
+          
         }
     }
 }

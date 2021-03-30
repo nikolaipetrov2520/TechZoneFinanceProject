@@ -31,12 +31,15 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.TabPage tab5;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(iTech));
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.reference1 = new System.Windows.Forms.TabPage();
@@ -50,6 +53,8 @@
             this.costReferenceBox = new System.Windows.Forms.TextBox();
             this.costReferenceLabel = new System.Windows.Forms.Label();
             this.reference3 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CostLabel = new System.Windows.Forms.Label();
             this.IncomLabel = new System.Windows.Forms.Label();
@@ -162,25 +167,27 @@
             // 
             // refferenceIncomeBox
             // 
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightBlue;
+            this.refferenceIncomeBox.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.refferenceIncomeBox.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.refferenceIncomeBox.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.refferenceIncomeBox.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.refferenceIncomeBox.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.refferenceIncomeBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.refferenceIncomeBox.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.refferenceIncomeBox.DefaultCellStyle = dataGridViewCellStyle12;
             this.refferenceIncomeBox.GridColor = System.Drawing.Color.Silver;
             this.refferenceIncomeBox.Location = new System.Drawing.Point(188, 46);
             this.refferenceIncomeBox.Name = "refferenceIncomeBox";
@@ -253,25 +260,27 @@
             // 
             // refferenceCostBox
             // 
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightBlue;
+            this.refferenceCostBox.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.refferenceCostBox.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.refferenceCostBox.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.refferenceCostBox.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.refferenceCostBox.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.refferenceCostBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.refferenceCostBox.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.refferenceCostBox.DefaultCellStyle = dataGridViewCellStyle15;
             this.refferenceCostBox.GridColor = System.Drawing.Color.Silver;
             this.refferenceCostBox.Location = new System.Drawing.Point(188, 46);
             this.refferenceCostBox.Name = "refferenceCostBox";
@@ -309,6 +318,8 @@
             // reference3
             // 
             this.reference3.BackColor = System.Drawing.Color.SteelBlue;
+            this.reference3.Controls.Add(this.label4);
+            this.reference3.Controls.Add(this.label3);
             this.reference3.Controls.Add(this.label2);
             this.reference3.Controls.Add(this.CostLabel);
             this.reference3.Controls.Add(this.IncomLabel);
@@ -336,19 +347,35 @@
             this.reference3.TabIndex = 2;
             this.reference3.Text = "Справка по дати";
             // 
+            // label4
+            // 
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Location = new System.Drawing.Point(447, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(2, 500);
+            this.label4.TabIndex = 22;
+            // 
+            // label3
+            // 
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label3.Location = new System.Drawing.Point(52, 120);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(348, 2);
+            this.label3.TabIndex = 21;
+            // 
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(93, 320);
+            this.label2.Location = new System.Drawing.Point(52, 340);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(300, 2);
+            this.label2.Size = new System.Drawing.Size(348, 2);
             this.label2.TabIndex = 20;
             // 
             // CostLabel
             // 
             this.CostLabel.AutoSize = true;
-            this.CostLabel.Location = new System.Drawing.Point(315, 120);
+            this.CostLabel.Location = new System.Drawing.Point(301, 141);
             this.CostLabel.Name = "CostLabel";
             this.CostLabel.Size = new System.Drawing.Size(78, 25);
             this.CostLabel.TabIndex = 19;
@@ -358,7 +385,7 @@
             // 
             this.IncomLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.IncomLabel.AutoSize = true;
-            this.IncomLabel.Location = new System.Drawing.Point(80, 120);
+            this.IncomLabel.Location = new System.Drawing.Point(66, 141);
             this.IncomLabel.Name = "IncomLabel";
             this.IncomLabel.Size = new System.Drawing.Size(85, 25);
             this.IncomLabel.TabIndex = 18;
@@ -367,7 +394,7 @@
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(240, 120);
+            this.label1.Location = new System.Drawing.Point(226, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(2, 180);
             this.label1.TabIndex = 17;
@@ -376,7 +403,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.DimGray;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(297, 234);
+            this.button1.Location = new System.Drawing.Point(283, 255);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 45);
             this.button1.TabIndex = 16;
@@ -388,7 +415,7 @@
             // 
             this.EditButton.BackColor = System.Drawing.Color.DimGray;
             this.EditButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EditButton.Location = new System.Drawing.Point(66, 234);
+            this.EditButton.Location = new System.Drawing.Point(52, 255);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(117, 45);
             this.EditButton.TabIndex = 15;
@@ -400,7 +427,7 @@
             // 
             this.MakeReference2.BackColor = System.Drawing.Color.DimGray;
             this.MakeReference2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MakeReference2.Location = new System.Drawing.Point(297, 161);
+            this.MakeReference2.Location = new System.Drawing.Point(283, 182);
             this.MakeReference2.Name = "MakeReference2";
             this.MakeReference2.Size = new System.Drawing.Size(117, 48);
             this.MakeReference2.TabIndex = 14;
@@ -410,25 +437,27 @@
             // 
             // dateBox
             // 
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.LightBlue;
+            this.dateBox.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dateBox.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dateBox.BackgroundColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dateBox.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dateBox.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dateBox.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dateBox.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dateBox.DefaultCellStyle = dataGridViewCellStyle18;
             this.dateBox.Location = new System.Drawing.Point(481, 63);
             this.dateBox.Name = "dateBox";
             this.dateBox.ReadOnly = true;
@@ -446,7 +475,7 @@
             this.totalBox.BackColor = System.Drawing.Color.Gainsboro;
             this.totalBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.totalBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.totalBox.Location = new System.Drawing.Point(179, 489);
+            this.totalBox.Location = new System.Drawing.Point(168, 487);
             this.totalBox.Name = "totalBox";
             this.totalBox.ReadOnly = true;
             this.totalBox.Size = new System.Drawing.Size(123, 43);
@@ -456,7 +485,7 @@
             // total
             // 
             this.total.AutoSize = true;
-            this.total.Location = new System.Drawing.Point(208, 443);
+            this.total.Location = new System.Drawing.Point(200, 447);
             this.total.Name = "total";
             this.total.Size = new System.Drawing.Size(62, 25);
             this.total.TabIndex = 11;
@@ -466,7 +495,7 @@
             // 
             this.makeReference.BackColor = System.Drawing.Color.DimGray;
             this.makeReference.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.makeReference.Location = new System.Drawing.Point(66, 161);
+            this.makeReference.Location = new System.Drawing.Point(52, 182);
             this.makeReference.Name = "makeReference";
             this.makeReference.Size = new System.Drawing.Size(117, 48);
             this.makeReference.TabIndex = 10;
@@ -477,7 +506,7 @@
             // dateRepair
             // 
             this.dateRepair.AutoSize = true;
-            this.dateRepair.Location = new System.Drawing.Point(310, 344);
+            this.dateRepair.Location = new System.Drawing.Point(297, 363);
             this.dateRepair.Name = "dateRepair";
             this.dateRepair.Size = new System.Drawing.Size(82, 25);
             this.dateRepair.TabIndex = 8;
@@ -486,7 +515,7 @@
             // dateIncome
             // 
             this.dateIncome.AutoSize = true;
-            this.dateIncome.Location = new System.Drawing.Point(61, 344);
+            this.dateIncome.Location = new System.Drawing.Point(61, 363);
             this.dateIncome.Name = "dateIncome";
             this.dateIncome.Size = new System.Drawing.Size(99, 25);
             this.dateIncome.TabIndex = 7;
@@ -497,7 +526,7 @@
             this.dateRepairBox.BackColor = System.Drawing.Color.Gainsboro;
             this.dateRepairBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dateRepairBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateRepairBox.Location = new System.Drawing.Point(292, 395);
+            this.dateRepairBox.Location = new System.Drawing.Point(278, 406);
             this.dateRepairBox.Name = "dateRepairBox";
             this.dateRepairBox.ReadOnly = true;
             this.dateRepairBox.Size = new System.Drawing.Size(122, 43);
@@ -509,7 +538,7 @@
             this.dateIncomeBox.BackColor = System.Drawing.Color.Gainsboro;
             this.dateIncomeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dateIncomeBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateIncomeBox.Location = new System.Drawing.Point(52, 395);
+            this.dateIncomeBox.Location = new System.Drawing.Point(51, 406);
             this.dateIncomeBox.Name = "dateIncomeBox";
             this.dateIncomeBox.ReadOnly = true;
             this.dateIncomeBox.Size = new System.Drawing.Size(131, 43);
@@ -528,7 +557,7 @@
             // dateEndLabel
             // 
             this.dateEndLabel.AutoSize = true;
-            this.dateEndLabel.Location = new System.Drawing.Point(306, 24);
+            this.dateEndLabel.Location = new System.Drawing.Point(257, 24);
             this.dateEndLabel.Name = "dateEndLabel";
             this.dateEndLabel.Size = new System.Drawing.Size(111, 25);
             this.dateEndLabel.TabIndex = 3;
@@ -537,7 +566,7 @@
             // dateStartLabel
             // 
             this.dateStartLabel.AutoSize = true;
-            this.dateStartLabel.Location = new System.Drawing.Point(66, 24);
+            this.dateStartLabel.Location = new System.Drawing.Point(70, 24);
             this.dateStartLabel.Name = "dateStartLabel";
             this.dateStartLabel.Size = new System.Drawing.Size(121, 25);
             this.dateStartLabel.TabIndex = 2;
@@ -546,7 +575,7 @@
             // dateEnd
             // 
             this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateEnd.Location = new System.Drawing.Point(289, 63);
+            this.dateEnd.Location = new System.Drawing.Point(246, 63);
             this.dateEnd.Name = "dateEnd";
             this.dateEnd.Size = new System.Drawing.Size(139, 31);
             this.dateEnd.TabIndex = 1;
@@ -554,7 +583,7 @@
             // dateStart
             // 
             this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateStart.Location = new System.Drawing.Point(57, 63);
+            this.dateStart.Location = new System.Drawing.Point(61, 63);
             this.dateStart.Name = "dateStart";
             this.dateStart.Size = new System.Drawing.Size(140, 31);
             this.dateStart.TabIndex = 0;
@@ -1084,6 +1113,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label CostLabel;
         private System.Windows.Forms.Label IncomLabel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }
 
