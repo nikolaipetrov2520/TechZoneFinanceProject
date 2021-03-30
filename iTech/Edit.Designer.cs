@@ -60,6 +60,8 @@ namespace iTech
             // 
             // EditIncomeDataGridView
             // 
+            this.EditIncomeDataGridView.AllowUserToResizeColumns = false;
+            this.EditIncomeDataGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
             this.EditIncomeDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.EditIncomeDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;

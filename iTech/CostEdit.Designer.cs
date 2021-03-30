@@ -58,6 +58,8 @@ namespace iTech
             // 
             // EditCostDataGridView
             // 
+            this.EditCostDataGridView.AllowUserToResizeColumns = false;
+            this.EditCostDataGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
             this.EditCostDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.EditCostDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
