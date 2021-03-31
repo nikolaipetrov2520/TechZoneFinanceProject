@@ -60,7 +60,7 @@ namespace iTech
             // 
             this.EditCostDataGridView.AllowUserToResizeColumns = false;
             this.EditCostDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
             this.EditCostDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.EditCostDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EditCostDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -92,19 +92,22 @@ namespace iTech
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.EditCostDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.EditCostDataGridView.RowHeadersVisible = false;
+            this.EditCostDataGridView.RowHeadersWidth = 51;
             this.EditCostDataGridView.RowTemplate.Height = 25;
             this.EditCostDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.EditCostDataGridView.Size = new System.Drawing.Size(933, 319);
             this.EditCostDataGridView.TabIndex = 1;
             this.EditCostDataGridView.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.EditCostDataGridView_CellMouseLeave);
             this.EditCostDataGridView.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EditCostDataGridView_CellMouseMove);
+            this.EditCostDataGridView.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EditCost);
             this.EditCostDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EditCost);
             // 
             // EditNameCostBox
             // 
             this.EditNameCostBox.Location = new System.Drawing.Point(143, 354);
             this.EditNameCostBox.Name = "EditNameCostBox";
-            this.EditNameCostBox.Size = new System.Drawing.Size(430, 31);
+            this.EditNameCostBox.Size = new System.Drawing.Size(430, 36);
             this.EditNameCostBox.TabIndex = 2;
             this.EditNameCostBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditNameCostBox_KeyDown);
             // 
@@ -112,7 +115,7 @@ namespace iTech
             // 
             this.EditSumCostBox.Location = new System.Drawing.Point(624, 354);
             this.EditSumCostBox.Name = "EditSumCostBox";
-            this.EditSumCostBox.Size = new System.Drawing.Size(107, 31);
+            this.EditSumCostBox.Size = new System.Drawing.Size(107, 36);
             this.EditSumCostBox.TabIndex = 3;
             this.EditSumCostBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditSumCostBox_KeyDown);
             this.EditSumCostBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditSumCostBox_KeyPress);
@@ -142,7 +145,7 @@ namespace iTech
             // 
             // CostEdit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1000, 550);

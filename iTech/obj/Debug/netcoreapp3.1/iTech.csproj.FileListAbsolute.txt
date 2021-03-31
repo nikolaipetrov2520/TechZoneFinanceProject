@@ -170,3 +170,4 @@ D:\TechZone\TechZoneFinanceProject\iTech\obj\Debug\netcoreapp3.1\iTech.dll
 D:\TechZone\TechZoneFinanceProject\iTech\obj\Debug\netcoreapp3.1\iTech.pdb
 D:\TechZone\TechZoneFinanceProject\iTech\obj\Debug\netcoreapp3.1\iTech.genruntimeconfig.cache
 C:\Users\user\source\repos\iTech\iTech\obj\Debug\netcoreapp3.1\iTech.CostEdit.resources
+D:\TechZone\TechZoneFinanceProject\iTech\obj\Debug\netcoreapp3.1\iTech.CostEdit.resources

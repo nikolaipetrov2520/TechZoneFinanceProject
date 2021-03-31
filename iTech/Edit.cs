@@ -337,7 +337,7 @@ namespace iTech
                 }
                 else
                 {
-                    EditIncomeDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightBlue;
+                    EditIncomeDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCyan;
                 }
 
             }

@@ -62,7 +62,7 @@ namespace iTech
             // 
             this.EditIncomeDataGridView.AllowUserToResizeColumns = false;
             this.EditIncomeDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
             this.EditIncomeDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.EditIncomeDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EditIncomeDataGridView.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -94,12 +94,15 @@ namespace iTech
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.EditIncomeDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.EditIncomeDataGridView.RowHeadersVisible = false;
+            this.EditIncomeDataGridView.RowHeadersWidth = 51;
             this.EditIncomeDataGridView.RowTemplate.Height = 25;
             this.EditIncomeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.EditIncomeDataGridView.Size = new System.Drawing.Size(933, 319);
             this.EditIncomeDataGridView.TabIndex = 1;
             this.EditIncomeDataGridView.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.EditIncomeDataGridView_CellMouseLeave);
             this.EditIncomeDataGridView.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EditIncomeDataGridView_CellMouseMove);
+            this.EditIncomeDataGridView.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EditIncome);
             this.EditIncomeDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EditIncome);
             // 
             // EditArticle
@@ -107,7 +110,7 @@ namespace iTech
             this.EditArticle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.EditArticle.Location = new System.Drawing.Point(87, 354);
             this.EditArticle.Name = "EditArticle";
-            this.EditArticle.Size = new System.Drawing.Size(512, 31);
+            this.EditArticle.Size = new System.Drawing.Size(512, 36);
             this.EditArticle.TabIndex = 2;
             this.EditArticle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditArticle_KeyDown);
             // 
@@ -116,7 +119,7 @@ namespace iTech
             this.EditQwantity.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.EditQwantity.Location = new System.Drawing.Point(620, 354);
             this.EditQwantity.Name = "EditQwantity";
-            this.EditQwantity.Size = new System.Drawing.Size(30, 31);
+            this.EditQwantity.Size = new System.Drawing.Size(30, 36);
             this.EditQwantity.TabIndex = 3;
             this.EditQwantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditQwantity_KeyDown);
             this.EditQwantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditQwantity_KeyPress);
@@ -126,7 +129,7 @@ namespace iTech
             this.EditPrice.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.EditPrice.Location = new System.Drawing.Point(670, 354);
             this.EditPrice.Name = "EditPrice";
-            this.EditPrice.Size = new System.Drawing.Size(100, 31);
+            this.EditPrice.Size = new System.Drawing.Size(100, 36);
             this.EditPrice.TabIndex = 4;
             this.EditPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditPrice_KeyDown);
             this.EditPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditPrice_KeyPress);
@@ -136,7 +139,7 @@ namespace iTech
             this.EditRepair.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.EditRepair.Location = new System.Drawing.Point(792, 354);
             this.EditRepair.Name = "EditRepair";
-            this.EditRepair.Size = new System.Drawing.Size(100, 31);
+            this.EditRepair.Size = new System.Drawing.Size(100, 36);
             this.EditRepair.TabIndex = 5;
             this.EditRepair.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditRepair_KeyDown);
             this.EditRepair.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditRepair_KeyPress);
@@ -166,7 +169,7 @@ namespace iTech
             // 
             // Edit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1000, 550);

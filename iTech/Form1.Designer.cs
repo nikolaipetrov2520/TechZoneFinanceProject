@@ -131,10 +131,9 @@
             tab5.BackColor = System.Drawing.Color.SteelBlue;
             tab5.Controls.Add(this.tabControl2);
             tab5.Location = new System.Drawing.Point(4, 42);
-            tab5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             tab5.Name = "tab5";
-            tab5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            tab5.Size = new System.Drawing.Size(1322, 631);
+            tab5.Padding = new System.Windows.Forms.Padding(3);
+            tab5.Size = new System.Drawing.Size(1512, 857);
             tab5.TabIndex = 5;
             tab5.Text = "Справки";
             // 
@@ -144,11 +143,12 @@
             this.tabControl2.Controls.Add(this.reference1);
             this.tabControl2.Controls.Add(this.reference2);
             this.tabControl2.Controls.Add(this.reference3);
-            this.tabControl2.Location = new System.Drawing.Point(18, 23);
+            this.tabControl2.Location = new System.Drawing.Point(21, 31);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.Padding = new System.Drawing.Point(141, 3);
             this.tabControl2.SelectedIndex = 2;
-            this.tabControl2.Size = new System.Drawing.Size(1284, 593);
+            this.tabControl2.Size = new System.Drawing.Size(1467, 791);
             this.tabControl2.TabIndex = 0;
             // 
             // reference1
@@ -160,10 +160,11 @@
             this.reference1.Controls.Add(this.incomeRepairLabel);
             this.reference1.Controls.Add(this.incomeSumLabel);
             this.reference1.ForeColor = System.Drawing.Color.Black;
-            this.reference1.Location = new System.Drawing.Point(4, 35);
+            this.reference1.Location = new System.Drawing.Point(4, 42);
+            this.reference1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.reference1.Name = "reference1";
-            this.reference1.Padding = new System.Windows.Forms.Padding(3);
-            this.reference1.Size = new System.Drawing.Size(1276, 554);
+            this.reference1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.reference1.Size = new System.Drawing.Size(1459, 745);
             this.reference1.TabIndex = 0;
             this.reference1.Text = "Продажби за деня";
             // 
@@ -171,7 +172,7 @@
             // 
             this.refferenceIncomeBox.AllowUserToResizeColumns = false;
             this.refferenceIncomeBox.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCyan;
             this.refferenceIncomeBox.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.refferenceIncomeBox.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.refferenceIncomeBox.BackgroundColor = System.Drawing.Color.White;
@@ -193,12 +194,14 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.refferenceIncomeBox.DefaultCellStyle = dataGridViewCellStyle3;
             this.refferenceIncomeBox.GridColor = System.Drawing.Color.Silver;
-            this.refferenceIncomeBox.Location = new System.Drawing.Point(188, 46);
+            this.refferenceIncomeBox.Location = new System.Drawing.Point(215, 61);
+            this.refferenceIncomeBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.refferenceIncomeBox.Name = "refferenceIncomeBox";
             this.refferenceIncomeBox.ReadOnly = true;
             this.refferenceIncomeBox.RowHeadersVisible = false;
+            this.refferenceIncomeBox.RowHeadersWidth = 51;
             this.refferenceIncomeBox.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.refferenceIncomeBox.Size = new System.Drawing.Size(908, 387);
+            this.refferenceIncomeBox.Size = new System.Drawing.Size(1038, 516);
             this.refferenceIncomeBox.TabIndex = 5;
             this.refferenceIncomeBox.Text = "dataGridView1";
             this.refferenceIncomeBox.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.refferenceIncomeBox_CellMouseLeave);
@@ -209,10 +212,11 @@
             this.incomeRepairBox.BackColor = System.Drawing.Color.Gainsboro;
             this.incomeRepairBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.incomeRepairBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.incomeRepairBox.Location = new System.Drawing.Point(891, 466);
+            this.incomeRepairBox.Location = new System.Drawing.Point(1018, 621);
+            this.incomeRepairBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.incomeRepairBox.Name = "incomeRepairBox";
             this.incomeRepairBox.ReadOnly = true;
-            this.incomeRepairBox.Size = new System.Drawing.Size(128, 43);
+            this.incomeRepairBox.Size = new System.Drawing.Size(146, 52);
             this.incomeRepairBox.TabIndex = 4;
             this.incomeRepairBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -221,10 +225,11 @@
             this.incomeSumBox.BackColor = System.Drawing.Color.Gainsboro;
             this.incomeSumBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.incomeSumBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.incomeSumBox.Location = new System.Drawing.Point(466, 466);
+            this.incomeSumBox.Location = new System.Drawing.Point(533, 621);
+            this.incomeSumBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.incomeSumBox.Name = "incomeSumBox";
             this.incomeSumBox.ReadOnly = true;
-            this.incomeSumBox.Size = new System.Drawing.Size(133, 43);
+            this.incomeSumBox.Size = new System.Drawing.Size(152, 52);
             this.incomeSumBox.TabIndex = 3;
             this.incomeSumBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -232,9 +237,9 @@
             // 
             this.incomeRepairLabel.AutoSize = true;
             this.incomeRepairLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.incomeRepairLabel.Location = new System.Drawing.Point(673, 472);
+            this.incomeRepairLabel.Location = new System.Drawing.Point(769, 629);
             this.incomeRepairLabel.Name = "incomeRepairLabel";
-            this.incomeRepairLabel.Size = new System.Drawing.Size(183, 32);
+            this.incomeRepairLabel.Size = new System.Drawing.Size(228, 41);
             this.incomeRepairLabel.TabIndex = 2;
             this.incomeRepairLabel.Text = "Общо ремонти";
             // 
@@ -242,9 +247,9 @@
             // 
             this.incomeSumLabel.AutoSize = true;
             this.incomeSumLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.incomeSumLabel.Location = new System.Drawing.Point(243, 472);
+            this.incomeSumLabel.Location = new System.Drawing.Point(278, 629);
             this.incomeSumLabel.Name = "incomeSumLabel";
-            this.incomeSumLabel.Size = new System.Drawing.Size(200, 32);
+            this.incomeSumLabel.Size = new System.Drawing.Size(249, 41);
             this.incomeSumLabel.TabIndex = 1;
             this.incomeSumLabel.Text = "Общо продажби";
             // 
@@ -255,10 +260,11 @@
             this.reference2.Controls.Add(this.costReferenceBox);
             this.reference2.Controls.Add(this.costReferenceLabel);
             this.reference2.ForeColor = System.Drawing.Color.Black;
-            this.reference2.Location = new System.Drawing.Point(4, 35);
+            this.reference2.Location = new System.Drawing.Point(4, 42);
+            this.reference2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.reference2.Name = "reference2";
-            this.reference2.Padding = new System.Windows.Forms.Padding(3);
-            this.reference2.Size = new System.Drawing.Size(1276, 554);
+            this.reference2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.reference2.Size = new System.Drawing.Size(1459, 745);
             this.reference2.TabIndex = 1;
             this.reference2.Text = "Разходи за деня";
             // 
@@ -266,7 +272,7 @@
             // 
             this.refferenceCostBox.AllowUserToResizeColumns = false;
             this.refferenceCostBox.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCyan;
             this.refferenceCostBox.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.refferenceCostBox.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.refferenceCostBox.BackgroundColor = System.Drawing.Color.White;
@@ -288,12 +294,14 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.refferenceCostBox.DefaultCellStyle = dataGridViewCellStyle6;
             this.refferenceCostBox.GridColor = System.Drawing.Color.Silver;
-            this.refferenceCostBox.Location = new System.Drawing.Point(188, 46);
+            this.refferenceCostBox.Location = new System.Drawing.Point(215, 61);
+            this.refferenceCostBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.refferenceCostBox.Name = "refferenceCostBox";
             this.refferenceCostBox.ReadOnly = true;
             this.refferenceCostBox.RowHeadersVisible = false;
+            this.refferenceCostBox.RowHeadersWidth = 51;
             this.refferenceCostBox.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.refferenceCostBox.Size = new System.Drawing.Size(908, 387);
+            this.refferenceCostBox.Size = new System.Drawing.Size(1038, 516);
             this.refferenceCostBox.TabIndex = 3;
             this.refferenceCostBox.Text = "dataGridView1";
             this.refferenceCostBox.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.refferenceCostBox_CellMouseLeave);
@@ -304,10 +312,11 @@
             this.costReferenceBox.BackColor = System.Drawing.Color.Gainsboro;
             this.costReferenceBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.costReferenceBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.costReferenceBox.Location = new System.Drawing.Point(703, 479);
+            this.costReferenceBox.Location = new System.Drawing.Point(803, 639);
+            this.costReferenceBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.costReferenceBox.Name = "costReferenceBox";
             this.costReferenceBox.ReadOnly = true;
-            this.costReferenceBox.Size = new System.Drawing.Size(100, 43);
+            this.costReferenceBox.Size = new System.Drawing.Size(114, 52);
             this.costReferenceBox.TabIndex = 2;
             this.costReferenceBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -315,9 +324,9 @@
             // 
             this.costReferenceLabel.AutoSize = true;
             this.costReferenceLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.costReferenceLabel.Location = new System.Drawing.Point(456, 479);
+            this.costReferenceLabel.Location = new System.Drawing.Point(521, 639);
             this.costReferenceLabel.Name = "costReferenceLabel";
-            this.costReferenceLabel.Size = new System.Drawing.Size(176, 32);
+            this.costReferenceLabel.Size = new System.Drawing.Size(220, 41);
             this.costReferenceLabel.TabIndex = 1;
             this.costReferenceLabel.Text = "Общо разходи";
             // 
@@ -346,44 +355,45 @@
             this.reference3.Controls.Add(this.dateStartLabel);
             this.reference3.Controls.Add(this.dateEnd);
             this.reference3.Controls.Add(this.dateStart);
-            this.reference3.Location = new System.Drawing.Point(4, 35);
+            this.reference3.Location = new System.Drawing.Point(4, 42);
+            this.reference3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.reference3.Name = "reference3";
-            this.reference3.Padding = new System.Windows.Forms.Padding(3);
-            this.reference3.Size = new System.Drawing.Size(1276, 554);
+            this.reference3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.reference3.Size = new System.Drawing.Size(1459, 745);
             this.reference3.TabIndex = 2;
             this.reference3.Text = "Справка по дати";
             // 
             // label4
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Location = new System.Drawing.Point(447, 30);
+            this.label4.Location = new System.Drawing.Point(511, 40);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(2, 500);
+            this.label4.Size = new System.Drawing.Size(2, 667);
             this.label4.TabIndex = 22;
             // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(52, 120);
+            this.label3.Location = new System.Drawing.Point(59, 160);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(348, 2);
+            this.label3.Size = new System.Drawing.Size(398, 3);
             this.label3.TabIndex = 21;
             // 
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(52, 340);
+            this.label2.Location = new System.Drawing.Point(59, 453);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(348, 2);
+            this.label2.Size = new System.Drawing.Size(398, 3);
             this.label2.TabIndex = 20;
             // 
             // CostLabel
             // 
             this.CostLabel.AutoSize = true;
-            this.CostLabel.Location = new System.Drawing.Point(301, 141);
+            this.CostLabel.Location = new System.Drawing.Point(344, 188);
             this.CostLabel.Name = "CostLabel";
-            this.CostLabel.Size = new System.Drawing.Size(78, 25);
+            this.CostLabel.Size = new System.Drawing.Size(94, 30);
             this.CostLabel.TabIndex = 19;
             this.CostLabel.Text = "Разходи";
             // 
@@ -391,27 +401,28 @@
             // 
             this.IncomLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.IncomLabel.AutoSize = true;
-            this.IncomLabel.Location = new System.Drawing.Point(66, 141);
+            this.IncomLabel.Location = new System.Drawing.Point(75, 188);
             this.IncomLabel.Name = "IncomLabel";
-            this.IncomLabel.Size = new System.Drawing.Size(85, 25);
+            this.IncomLabel.Size = new System.Drawing.Size(103, 30);
             this.IncomLabel.TabIndex = 18;
             this.IncomLabel.Text = "Приходи";
             // 
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(226, 140);
+            this.label1.Location = new System.Drawing.Point(258, 187);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(2, 180);
+            this.label1.Size = new System.Drawing.Size(2, 240);
             this.label1.TabIndex = 17;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DimGray;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(283, 255);
+            this.button1.Location = new System.Drawing.Point(323, 340);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 45);
+            this.button1.Size = new System.Drawing.Size(134, 60);
             this.button1.TabIndex = 16;
             this.button1.Text = "Редактиране";
             this.button1.UseVisualStyleBackColor = false;
@@ -421,9 +432,10 @@
             // 
             this.EditButton.BackColor = System.Drawing.Color.DimGray;
             this.EditButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EditButton.Location = new System.Drawing.Point(52, 255);
+            this.EditButton.Location = new System.Drawing.Point(59, 340);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(117, 45);
+            this.EditButton.Size = new System.Drawing.Size(134, 60);
             this.EditButton.TabIndex = 15;
             this.EditButton.Text = "Редактиране";
             this.EditButton.UseVisualStyleBackColor = false;
@@ -433,9 +445,10 @@
             // 
             this.MakeReference2.BackColor = System.Drawing.Color.DimGray;
             this.MakeReference2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MakeReference2.Location = new System.Drawing.Point(283, 182);
+            this.MakeReference2.Location = new System.Drawing.Point(323, 243);
+            this.MakeReference2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MakeReference2.Name = "MakeReference2";
-            this.MakeReference2.Size = new System.Drawing.Size(117, 48);
+            this.MakeReference2.Size = new System.Drawing.Size(134, 64);
             this.MakeReference2.TabIndex = 14;
             this.MakeReference2.Text = "Преглед";
             this.MakeReference2.UseVisualStyleBackColor = false;
@@ -445,7 +458,7 @@
             // 
             this.dateBox.AllowUserToResizeColumns = false;
             this.dateBox.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightCyan;
             this.dateBox.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dateBox.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dateBox.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -466,13 +479,14 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dateBox.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dateBox.Location = new System.Drawing.Point(481, 63);
+            this.dateBox.Location = new System.Drawing.Point(550, 84);
+            this.dateBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateBox.Name = "dateBox";
             this.dateBox.ReadOnly = true;
             this.dateBox.RowHeadersVisible = false;
             this.dateBox.RowHeadersWidth = 5;
             this.dateBox.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dateBox.Size = new System.Drawing.Size(778, 474);
+            this.dateBox.Size = new System.Drawing.Size(889, 632);
             this.dateBox.TabIndex = 13;
             this.dateBox.Text = "dataGridView1";
             this.dateBox.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dateBox_CellMouseLeave);
@@ -483,19 +497,20 @@
             this.totalBox.BackColor = System.Drawing.Color.Gainsboro;
             this.totalBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.totalBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.totalBox.Location = new System.Drawing.Point(168, 487);
+            this.totalBox.Location = new System.Drawing.Point(192, 649);
+            this.totalBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.totalBox.Name = "totalBox";
             this.totalBox.ReadOnly = true;
-            this.totalBox.Size = new System.Drawing.Size(123, 43);
+            this.totalBox.Size = new System.Drawing.Size(140, 52);
             this.totalBox.TabIndex = 12;
             this.totalBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // total
             // 
             this.total.AutoSize = true;
-            this.total.Location = new System.Drawing.Point(200, 447);
+            this.total.Location = new System.Drawing.Point(229, 596);
             this.total.Name = "total";
-            this.total.Size = new System.Drawing.Size(62, 25);
+            this.total.Size = new System.Drawing.Size(74, 30);
             this.total.TabIndex = 11;
             this.total.Text = "Общо";
             // 
@@ -503,9 +518,10 @@
             // 
             this.makeReference.BackColor = System.Drawing.Color.DimGray;
             this.makeReference.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.makeReference.Location = new System.Drawing.Point(52, 182);
+            this.makeReference.Location = new System.Drawing.Point(59, 243);
+            this.makeReference.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.makeReference.Name = "makeReference";
-            this.makeReference.Size = new System.Drawing.Size(117, 48);
+            this.makeReference.Size = new System.Drawing.Size(134, 64);
             this.makeReference.TabIndex = 10;
             this.makeReference.Text = "Преглед";
             this.makeReference.UseVisualStyleBackColor = false;
@@ -514,18 +530,18 @@
             // dateRepair
             // 
             this.dateRepair.AutoSize = true;
-            this.dateRepair.Location = new System.Drawing.Point(297, 363);
+            this.dateRepair.Location = new System.Drawing.Point(339, 484);
             this.dateRepair.Name = "dateRepair";
-            this.dateRepair.Size = new System.Drawing.Size(82, 25);
+            this.dateRepair.Size = new System.Drawing.Size(100, 30);
             this.dateRepair.TabIndex = 8;
             this.dateRepair.Text = "Ремонти";
             // 
             // dateIncome
             // 
             this.dateIncome.AutoSize = true;
-            this.dateIncome.Location = new System.Drawing.Point(61, 363);
+            this.dateIncome.Location = new System.Drawing.Point(70, 484);
             this.dateIncome.Name = "dateIncome";
-            this.dateIncome.Size = new System.Drawing.Size(99, 25);
+            this.dateIncome.Size = new System.Drawing.Size(120, 30);
             this.dateIncome.TabIndex = 7;
             this.dateIncome.Text = "Продажби";
             // 
@@ -534,10 +550,11 @@
             this.dateRepairBox.BackColor = System.Drawing.Color.Gainsboro;
             this.dateRepairBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dateRepairBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateRepairBox.Location = new System.Drawing.Point(278, 406);
+            this.dateRepairBox.Location = new System.Drawing.Point(318, 541);
+            this.dateRepairBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateRepairBox.Name = "dateRepairBox";
             this.dateRepairBox.ReadOnly = true;
-            this.dateRepairBox.Size = new System.Drawing.Size(122, 43);
+            this.dateRepairBox.Size = new System.Drawing.Size(139, 52);
             this.dateRepairBox.TabIndex = 6;
             this.dateRepairBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -546,54 +563,57 @@
             this.dateIncomeBox.BackColor = System.Drawing.Color.Gainsboro;
             this.dateIncomeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dateIncomeBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateIncomeBox.Location = new System.Drawing.Point(51, 406);
+            this.dateIncomeBox.Location = new System.Drawing.Point(58, 541);
+            this.dateIncomeBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateIncomeBox.Name = "dateIncomeBox";
             this.dateIncomeBox.ReadOnly = true;
-            this.dateIncomeBox.Size = new System.Drawing.Size(131, 43);
+            this.dateIncomeBox.Size = new System.Drawing.Size(149, 52);
             this.dateIncomeBox.TabIndex = 5;
             this.dateIncomeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // referanceDate
             // 
             this.referanceDate.AutoSize = true;
-            this.referanceDate.Location = new System.Drawing.Point(758, 24);
+            this.referanceDate.Location = new System.Drawing.Point(866, 32);
             this.referanceDate.Name = "referanceDate";
-            this.referanceDate.Size = new System.Drawing.Size(177, 25);
+            this.referanceDate.Size = new System.Drawing.Size(219, 30);
             this.referanceDate.TabIndex = 4;
             this.referanceDate.Text = "Резултат за периода";
             // 
             // dateEndLabel
             // 
             this.dateEndLabel.AutoSize = true;
-            this.dateEndLabel.Location = new System.Drawing.Point(257, 24);
+            this.dateEndLabel.Location = new System.Drawing.Point(294, 32);
             this.dateEndLabel.Name = "dateEndLabel";
-            this.dateEndLabel.Size = new System.Drawing.Size(111, 25);
+            this.dateEndLabel.Size = new System.Drawing.Size(136, 30);
             this.dateEndLabel.TabIndex = 3;
             this.dateEndLabel.Text = "Крайна дата";
             // 
             // dateStartLabel
             // 
             this.dateStartLabel.AutoSize = true;
-            this.dateStartLabel.Location = new System.Drawing.Point(70, 24);
+            this.dateStartLabel.Location = new System.Drawing.Point(80, 32);
             this.dateStartLabel.Name = "dateStartLabel";
-            this.dateStartLabel.Size = new System.Drawing.Size(121, 25);
+            this.dateStartLabel.Size = new System.Drawing.Size(148, 30);
             this.dateStartLabel.TabIndex = 2;
             this.dateStartLabel.Text = "Начална дата";
             // 
             // dateEnd
             // 
             this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateEnd.Location = new System.Drawing.Point(246, 63);
+            this.dateEnd.Location = new System.Drawing.Point(281, 84);
+            this.dateEnd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateEnd.Name = "dateEnd";
-            this.dateEnd.Size = new System.Drawing.Size(139, 31);
+            this.dateEnd.Size = new System.Drawing.Size(158, 36);
             this.dateEnd.TabIndex = 1;
             // 
             // dateStart
             // 
             this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateStart.Location = new System.Drawing.Point(61, 63);
+            this.dateStart.Location = new System.Drawing.Point(70, 84);
+            this.dateStart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateStart.Name = "dateStart";
-            this.dateStart.Size = new System.Drawing.Size(140, 31);
+            this.dateStart.Size = new System.Drawing.Size(159, 36);
             this.dateStart.TabIndex = 0;
             // 
             // tabControl1
@@ -606,12 +626,11 @@
             this.tabControl1.Controls.Add(tab5);
             this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tabControl1.ItemSize = new System.Drawing.Size(120, 38);
-            this.tabControl1.Location = new System.Drawing.Point(9, 16);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabControl1.Location = new System.Drawing.Point(10, 21);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(99, 3);
             this.tabControl1.SelectedIndex = 4;
-            this.tabControl1.Size = new System.Drawing.Size(1330, 677);
+            this.tabControl1.Size = new System.Drawing.Size(1520, 903);
             this.tabControl1.TabIndex = 1;
             // 
             // tab1
@@ -632,19 +651,18 @@
             this.tab1.Controls.Add(this.article);
             this.tab1.ForeColor = System.Drawing.Color.White;
             this.tab1.Location = new System.Drawing.Point(4, 42);
-            this.tab1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab1.Name = "tab1";
-            this.tab1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab1.Size = new System.Drawing.Size(1322, 631);
+            this.tab1.Padding = new System.Windows.Forms.Padding(3);
+            this.tab1.Size = new System.Drawing.Size(1512, 857);
             this.tab1.TabIndex = 1;
             this.tab1.Text = "Приход";
             // 
             // PaymantLabel
             // 
             this.PaymantLabel.AutoSize = true;
-            this.PaymantLabel.Location = new System.Drawing.Point(361, 176);
+            this.PaymantLabel.Location = new System.Drawing.Point(413, 235);
             this.PaymantLabel.Name = "PaymantLabel";
-            this.PaymantLabel.Size = new System.Drawing.Size(118, 25);
+            this.PaymantLabel.Size = new System.Drawing.Size(147, 30);
             this.PaymantLabel.TabIndex = 12;
             this.PaymantLabel.Text = "Вид плащане";
             // 
@@ -654,9 +672,10 @@
             this.PaymantComboBox.Items.AddRange(new object[] {
             "В Брой",
             "POS"});
-            this.PaymantComboBox.Location = new System.Drawing.Point(361, 215);
+            this.PaymantComboBox.Location = new System.Drawing.Point(413, 287);
+            this.PaymantComboBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PaymantComboBox.Name = "PaymantComboBox";
-            this.PaymantComboBox.Size = new System.Drawing.Size(121, 31);
+            this.PaymantComboBox.Size = new System.Drawing.Size(138, 38);
             this.PaymantComboBox.TabIndex = 11;
             this.PaymantComboBox.Text = "В Брой";
             // 
@@ -665,11 +684,10 @@
             this.sum.BackColor = System.Drawing.Color.Gainsboro;
             this.sum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.sum.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.sum.Location = new System.Drawing.Point(690, 130);
-            this.sum.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.sum.Location = new System.Drawing.Point(789, 173);
             this.sum.Name = "sum";
             this.sum.ReadOnly = true;
-            this.sum.Size = new System.Drawing.Size(107, 43);
+            this.sum.Size = new System.Drawing.Size(122, 52);
             this.sum.TabIndex = 10;
             this.sum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -677,9 +695,9 @@
             // 
             this.sumLabel.AutoSize = true;
             this.sumLabel.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.sumLabel.Location = new System.Drawing.Point(545, 130);
+            this.sumLabel.Location = new System.Drawing.Point(623, 173);
             this.sumLabel.Name = "sumLabel";
-            this.sumLabel.Size = new System.Drawing.Size(124, 41);
+            this.sumLabel.Size = new System.Drawing.Size(152, 50);
             this.sumLabel.TabIndex = 9;
             this.sumLabel.Text = "Оборот";
             // 
@@ -689,10 +707,9 @@
             this.submit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.submit.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaption;
             this.submit.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.submit.Location = new System.Drawing.Point(559, 467);
-            this.submit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.submit.Location = new System.Drawing.Point(639, 623);
             this.submit.Name = "submit";
-            this.submit.Size = new System.Drawing.Size(197, 46);
+            this.submit.Size = new System.Drawing.Size(225, 61);
             this.submit.TabIndex = 8;
             this.submit.Text = "Запис";
             this.submit.UseVisualStyleBackColor = false;
@@ -704,10 +721,9 @@
             this.repairBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.repairBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.repairBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.repairBox.Location = new System.Drawing.Point(940, 322);
-            this.repairBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.repairBox.Location = new System.Drawing.Point(1074, 429);
             this.repairBox.Name = "repairBox";
-            this.repairBox.Size = new System.Drawing.Size(114, 39);
+            this.repairBox.Size = new System.Drawing.Size(130, 47);
             this.repairBox.TabIndex = 7;
             this.repairBox.Text = "0";
             this.repairBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -719,10 +735,9 @@
             this.priceBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.priceBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.priceBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.priceBox.Location = new System.Drawing.Point(787, 322);
-            this.priceBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.priceBox.Location = new System.Drawing.Point(899, 429);
             this.priceBox.Name = "priceBox";
-            this.priceBox.Size = new System.Drawing.Size(108, 39);
+            this.priceBox.Size = new System.Drawing.Size(123, 47);
             this.priceBox.TabIndex = 6;
             this.priceBox.Text = "0";
             this.priceBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -734,10 +749,9 @@
             this.quantityBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.quantityBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.quantityBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.quantityBox.Location = new System.Drawing.Point(671, 322);
-            this.quantityBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.quantityBox.Location = new System.Drawing.Point(767, 429);
             this.quantityBox.Name = "quantityBox";
-            this.quantityBox.Size = new System.Drawing.Size(67, 39);
+            this.quantityBox.Size = new System.Drawing.Size(76, 47);
             this.quantityBox.TabIndex = 5;
             this.quantityBox.Text = "1";
             this.quantityBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -749,9 +763,10 @@
             this.articleBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.articleBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.articleBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.articleBox.Location = new System.Drawing.Point(207, 322);
+            this.articleBox.Location = new System.Drawing.Point(237, 429);
+            this.articleBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.articleBox.Name = "articleBox";
-            this.articleBox.Size = new System.Drawing.Size(412, 39);
+            this.articleBox.Size = new System.Drawing.Size(471, 47);
             this.articleBox.TabIndex = 4;
             this.articleBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.articleBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -761,9 +776,9 @@
             // 
             this.repair.AutoSize = true;
             this.repair.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.repair.Location = new System.Drawing.Point(940, 277);
+            this.repair.Location = new System.Drawing.Point(1074, 369);
             this.repair.Name = "repair";
-            this.repair.Size = new System.Drawing.Size(108, 37);
+            this.repair.Size = new System.Drawing.Size(135, 46);
             this.repair.TabIndex = 3;
             this.repair.Text = "Ремонт";
             // 
@@ -771,9 +786,9 @@
             // 
             this.price.AutoSize = true;
             this.price.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.price.Location = new System.Drawing.Point(796, 277);
+            this.price.Location = new System.Drawing.Point(910, 369);
             this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(81, 37);
+            this.price.Size = new System.Drawing.Size(100, 46);
             this.price.TabIndex = 2;
             this.price.Text = "Цена";
             // 
@@ -781,9 +796,9 @@
             // 
             this.quantity.AutoSize = true;
             this.quantity.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.quantity.Location = new System.Drawing.Point(671, 277);
+            this.quantity.Location = new System.Drawing.Point(767, 369);
             this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(69, 37);
+            this.quantity.Size = new System.Drawing.Size(85, 46);
             this.quantity.TabIndex = 1;
             this.quantity.Text = "Кол.";
             // 
@@ -791,9 +806,9 @@
             // 
             this.article.AutoSize = true;
             this.article.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.article.Location = new System.Drawing.Point(365, 277);
+            this.article.Location = new System.Drawing.Point(417, 369);
             this.article.Name = "article";
-            this.article.Size = new System.Drawing.Size(117, 37);
+            this.article.Size = new System.Drawing.Size(147, 46);
             this.article.TabIndex = 0;
             this.article.Text = "Артикул";
             // 
@@ -808,10 +823,9 @@
             this.tab2.Controls.Add(this.costSum);
             this.tab2.Controls.Add(this.costName);
             this.tab2.Location = new System.Drawing.Point(4, 42);
-            this.tab2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab2.Name = "tab2";
-            this.tab2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab2.Size = new System.Drawing.Size(1322, 631);
+            this.tab2.Padding = new System.Windows.Forms.Padding(3);
+            this.tab2.Size = new System.Drawing.Size(1512, 857);
             this.tab2.TabIndex = 2;
             this.tab2.Text = "Разход";
             // 
@@ -819,9 +833,10 @@
             // 
             this.costSubmit.BackColor = System.Drawing.Color.DimGray;
             this.costSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.costSubmit.Location = new System.Drawing.Point(551, 490);
+            this.costSubmit.Location = new System.Drawing.Point(630, 653);
+            this.costSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.costSubmit.Name = "costSubmit";
-            this.costSubmit.Size = new System.Drawing.Size(230, 47);
+            this.costSubmit.Size = new System.Drawing.Size(263, 63);
             this.costSubmit.TabIndex = 6;
             this.costSubmit.Text = "Запис";
             this.costSubmit.UseVisualStyleBackColor = false;
@@ -833,10 +848,11 @@
             this.costForDayBox.BackColor = System.Drawing.Color.Gainsboro;
             this.costForDayBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.costForDayBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.costForDayBox.Location = new System.Drawing.Point(634, 148);
+            this.costForDayBox.Location = new System.Drawing.Point(725, 197);
+            this.costForDayBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.costForDayBox.Name = "costForDayBox";
             this.costForDayBox.ReadOnly = true;
-            this.costForDayBox.Size = new System.Drawing.Size(100, 43);
+            this.costForDayBox.Size = new System.Drawing.Size(114, 52);
             this.costForDayBox.TabIndex = 5;
             this.costForDayBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -844,9 +860,10 @@
             // 
             this.costSumBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.costSumBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.costSumBox.Location = new System.Drawing.Point(879, 343);
+            this.costSumBox.Location = new System.Drawing.Point(1005, 457);
+            this.costSumBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.costSumBox.Name = "costSumBox";
-            this.costSumBox.Size = new System.Drawing.Size(100, 39);
+            this.costSumBox.Size = new System.Drawing.Size(114, 47);
             this.costSumBox.TabIndex = 4;
             this.costSumBox.Text = "0";
             this.costSumBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -857,9 +874,10 @@
             // 
             this.costNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.costNameBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.costNameBox.Location = new System.Drawing.Point(316, 343);
+            this.costNameBox.Location = new System.Drawing.Point(361, 457);
+            this.costNameBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.costNameBox.Name = "costNameBox";
-            this.costNameBox.Size = new System.Drawing.Size(388, 39);
+            this.costNameBox.Size = new System.Drawing.Size(443, 47);
             this.costNameBox.TabIndex = 3;
             this.costNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.costNameBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.costNameBox_KeyDown);
@@ -868,9 +886,9 @@
             // 
             this.costForDay.AutoSize = true;
             this.costForDay.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.costForDay.Location = new System.Drawing.Point(581, 92);
+            this.costForDay.Location = new System.Drawing.Point(664, 123);
             this.costForDay.Name = "costForDay";
-            this.costForDay.Size = new System.Drawing.Size(200, 37);
+            this.costForDay.Size = new System.Drawing.Size(250, 46);
             this.costForDay.TabIndex = 2;
             this.costForDay.Text = "Разход за деня";
             // 
@@ -878,9 +896,9 @@
             // 
             this.costSum.AutoSize = true;
             this.costSum.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.costSum.Location = new System.Drawing.Point(890, 287);
+            this.costSum.Location = new System.Drawing.Point(1017, 383);
             this.costSum.Name = "costSum";
-            this.costSum.Size = new System.Drawing.Size(80, 37);
+            this.costSum.Size = new System.Drawing.Size(98, 46);
             this.costSum.TabIndex = 1;
             this.costSum.Text = "Сума";
             // 
@@ -888,9 +906,9 @@
             // 
             this.costName.AutoSize = true;
             this.costName.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.costName.Location = new System.Drawing.Point(449, 287);
+            this.costName.Location = new System.Drawing.Point(513, 383);
             this.costName.Name = "costName";
-            this.costName.Size = new System.Drawing.Size(101, 37);
+            this.costName.Size = new System.Drawing.Size(126, 46);
             this.costName.TabIndex = 0;
             this.costName.Text = "Разход";
             // 
@@ -900,10 +918,9 @@
             this.tab3.Controls.Add(this.cashBox);
             this.tab3.Controls.Add(this.cashLabel);
             this.tab3.Location = new System.Drawing.Point(4, 42);
-            this.tab3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab3.Name = "tab3";
-            this.tab3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab3.Size = new System.Drawing.Size(1322, 631);
+            this.tab3.Padding = new System.Windows.Forms.Padding(3);
+            this.tab3.Size = new System.Drawing.Size(1512, 857);
             this.tab3.TabIndex = 3;
             this.tab3.Text = "Каса";
             // 
@@ -911,10 +928,11 @@
             // 
             this.cashBox.BackColor = System.Drawing.Color.Gainsboro;
             this.cashBox.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cashBox.Location = new System.Drawing.Point(536, 293);
+            this.cashBox.Location = new System.Drawing.Point(613, 391);
+            this.cashBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cashBox.Name = "cashBox";
             this.cashBox.ReadOnly = true;
-            this.cashBox.Size = new System.Drawing.Size(246, 61);
+            this.cashBox.Size = new System.Drawing.Size(281, 74);
             this.cashBox.TabIndex = 1;
             this.cashBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -922,9 +940,9 @@
             // 
             this.cashLabel.AutoSize = true;
             this.cashLabel.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cashLabel.Location = new System.Drawing.Point(504, 194);
+            this.cashLabel.Location = new System.Drawing.Point(576, 259);
             this.cashLabel.Name = "cashLabel";
-            this.cashLabel.Size = new System.Drawing.Size(300, 47);
+            this.cashLabel.Size = new System.Drawing.Size(374, 60);
             this.cashLabel.TabIndex = 0;
             this.cashLabel.Text = "Наличност в каса";
             // 
@@ -940,19 +958,19 @@
             this.tab4.Controls.Add(this.cash2InLlabel);
             this.tab4.Controls.Add(this.cash2Label);
             this.tab4.Location = new System.Drawing.Point(4, 42);
-            this.tab4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tab4.Name = "tab4";
-            this.tab4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tab4.Size = new System.Drawing.Size(1322, 631);
+            this.tab4.Padding = new System.Windows.Forms.Padding(3);
+            this.tab4.Size = new System.Drawing.Size(1512, 857);
             this.tab4.TabIndex = 4;
             this.tab4.Text = "Каса 2";
             // 
             // cash2OutButton
             // 
             this.cash2OutButton.BackColor = System.Drawing.Color.DimGray;
-            this.cash2OutButton.Location = new System.Drawing.Point(372, 429);
+            this.cash2OutButton.Location = new System.Drawing.Point(425, 572);
+            this.cash2OutButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cash2OutButton.Name = "cash2OutButton";
-            this.cash2OutButton.Size = new System.Drawing.Size(54, 39);
+            this.cash2OutButton.Size = new System.Drawing.Size(62, 52);
             this.cash2OutButton.TabIndex = 7;
             this.cash2OutButton.Text = "OK";
             this.cash2OutButton.UseVisualStyleBackColor = false;
@@ -961,9 +979,10 @@
             // cash2InButton
             // 
             this.cash2InButton.BackColor = System.Drawing.Color.DimGray;
-            this.cash2InButton.Location = new System.Drawing.Point(372, 223);
+            this.cash2InButton.Location = new System.Drawing.Point(425, 297);
+            this.cash2InButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cash2InButton.Name = "cash2InButton";
-            this.cash2InButton.Size = new System.Drawing.Size(54, 38);
+            this.cash2InButton.Size = new System.Drawing.Size(62, 51);
             this.cash2InButton.TabIndex = 6;
             this.cash2InButton.Text = "OK";
             this.cash2InButton.UseVisualStyleBackColor = false;
@@ -974,10 +993,11 @@
             this.cash2Box.BackColor = System.Drawing.Color.Gainsboro;
             this.cash2Box.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cash2Box.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cash2Box.Location = new System.Drawing.Point(733, 310);
+            this.cash2Box.Location = new System.Drawing.Point(838, 413);
+            this.cash2Box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cash2Box.Name = "cash2Box";
             this.cash2Box.ReadOnly = true;
-            this.cash2Box.Size = new System.Drawing.Size(234, 61);
+            this.cash2Box.Size = new System.Drawing.Size(267, 74);
             this.cash2Box.TabIndex = 5;
             this.cash2Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -986,9 +1006,10 @@
             this.cash2OutBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cash2OutBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cash2OutBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cash2OutBox.Location = new System.Drawing.Point(210, 429);
+            this.cash2OutBox.Location = new System.Drawing.Point(240, 572);
+            this.cash2OutBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cash2OutBox.Name = "cash2OutBox";
-            this.cash2OutBox.Size = new System.Drawing.Size(138, 39);
+            this.cash2OutBox.Size = new System.Drawing.Size(157, 47);
             this.cash2OutBox.TabIndex = 4;
             this.cash2OutBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cash2OutBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cash2OutBox_KeyDown);
@@ -999,9 +1020,10 @@
             this.cash2InBox.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.cash2InBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cash2InBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cash2InBox.Location = new System.Drawing.Point(210, 221);
+            this.cash2InBox.Location = new System.Drawing.Point(240, 295);
+            this.cash2InBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cash2InBox.Name = "cash2InBox";
-            this.cash2InBox.Size = new System.Drawing.Size(138, 39);
+            this.cash2InBox.Size = new System.Drawing.Size(157, 47);
             this.cash2InBox.TabIndex = 3;
             this.cash2InBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.cash2InBox.TextChanged += new System.EventHandler(this.cash2InBox_TextChanged);
@@ -1012,9 +1034,9 @@
             // 
             this.cash2OutLabel.AutoSize = true;
             this.cash2OutLabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cash2OutLabel.Location = new System.Drawing.Point(225, 344);
+            this.cash2OutLabel.Location = new System.Drawing.Point(257, 459);
             this.cash2OutLabel.Name = "cash2OutLabel";
-            this.cash2OutLabel.Size = new System.Drawing.Size(108, 37);
+            this.cash2OutLabel.Size = new System.Drawing.Size(134, 46);
             this.cash2OutLabel.TabIndex = 2;
             this.cash2OutLabel.Text = "Извади";
             // 
@@ -1022,9 +1044,9 @@
             // 
             this.cash2InLlabel.AutoSize = true;
             this.cash2InLlabel.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cash2InLlabel.Location = new System.Drawing.Point(225, 151);
+            this.cash2InLlabel.Location = new System.Drawing.Point(257, 201);
             this.cash2InLlabel.Name = "cash2InLlabel";
-            this.cash2InLlabel.Size = new System.Drawing.Size(112, 37);
+            this.cash2InLlabel.Size = new System.Drawing.Size(139, 46);
             this.cash2InLlabel.TabIndex = 1;
             this.cash2InLlabel.Text = "Добави";
             // 
@@ -1032,22 +1054,21 @@
             // 
             this.cash2Label.AutoSize = true;
             this.cash2Label.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cash2Label.Location = new System.Drawing.Point(692, 209);
+            this.cash2Label.Location = new System.Drawing.Point(791, 279);
             this.cash2Label.Name = "cash2Label";
-            this.cash2Label.Size = new System.Drawing.Size(332, 47);
+            this.cash2Label.Size = new System.Drawing.Size(414, 60);
             this.cash2Label.TabIndex = 0;
             this.cash2Label.Text = "Наличност в Каса 2";
             // 
             // iTech
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(1351, 704);
+            this.ClientSize = new System.Drawing.Size(1544, 939);
             this.Controls.Add(this.tabControl1);
             this.ForeColor = System.Drawing.Color.White;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "iTech";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

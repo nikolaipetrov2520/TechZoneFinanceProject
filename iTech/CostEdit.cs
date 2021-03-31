@@ -229,7 +229,7 @@ namespace iTech
                 }
                 else
                 {
-                    EditCostDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightBlue;
+                    EditCostDataGridView.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCyan;
                 }
 
             }

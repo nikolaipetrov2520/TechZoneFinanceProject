@@ -90,78 +90,79 @@ namespace iTech
 
         private void submit_Click(object sender, EventArgs e)
         {
-            if (PaymantComboBox.Text == "В Брой")
+            if (articleBox.Text != "")
             {
-                if (articleBox.Text != "")
+                string priceString = "0";
+                string repairString = "0";
+                string quantityString = "1";
+
+                if (priceBox.Text != "")
                 {
-                    string priceString = "0";
-                    string repairString = "0";
-                    string quantityString = "1";
-
-                    if (priceBox.Text != "")
+                    if (priceBox.Text != "." && priceBox.Text != ",")
                     {
-                        if (priceBox.Text != "." && priceBox.Text != ",")
-                        {
-                            priceString = priceBox.Text.ToString();
-                        }
-
-                    }
-                    if (repairBox.Text != "")
-                    {
-                        if (repairBox.Text != "." && repairBox.Text != ",")
-                        {
-                            repairString = repairBox.Text.ToString();
-                        }
-                    }
-                    if (quantityBox.Text != "")
-                    {
-                        if (quantityBox.Text != "." && quantityBox.Text != ",")
-                        {
-                            quantityString = quantityBox.Text.ToString();
-                        }
-
+                        priceString = priceBox.Text.ToString();
                     }
 
-                    for (int i = 0; i < priceString.Length; i++)
+                }
+                if (repairBox.Text != "")
+                {
+                    if (repairBox.Text != "." && repairBox.Text != ",")
                     {
-                        if (priceString[i] == ',')
-                        {
-                            string priStr1 = priceString.Substring(0, i);
-                            string priStr2 = priceString.Substring(i + 1);
-                            priceString = priStr1 + '.' + priStr2;
-                        }
+                        repairString = repairBox.Text.ToString();
                     }
-                    for (int i = 0; i < repairString.Length; i++)
+                }
+                if (quantityBox.Text != "")
+                {
+                    if (quantityBox.Text != "." && quantityBox.Text != ",")
                     {
-                        if (repairString[i] == ',')
-                        {
-                            string repStr1 = repairString.Substring(0, i);
-                            string repStr2 = repairString.Substring(i + 1);
-                            repairString = repStr1 + '.' + repStr2;
-                        }
+                        quantityString = quantityBox.Text.ToString();
                     }
 
-                    var entity = new Income
+                }
+
+                for (int i = 0; i < priceString.Length; i++)
+                {
+                    if (priceString[i] == ',')
                     {
-                        Date = DateTime.Now,
-                        Article = articleBox.Text,
-                        Quantity = int.Parse(quantityString),
-                        Price = decimal.Parse(priceString),
-                        Repair = decimal.Parse(repairString)
-                    };
+                        string priStr1 = priceString.Substring(0, i);
+                        string priStr2 = priceString.Substring(i + 1);
+                        priceString = priStr1 + '.' + priStr2;
+                    }
+                }
+                for (int i = 0; i < repairString.Length; i++)
+                {
+                    if (repairString[i] == ',')
+                    {
+                        string repStr1 = repairString.Substring(0, i);
+                        string repStr2 = repairString.Substring(i + 1);
+                        repairString = repStr1 + '.' + repStr2;
+                    }
+                }
 
+                var entity = new Income
+                {
+                    Date = DateTime.Now,
+                    Article = articleBox.Text,
+                    Quantity = int.Parse(quantityString),
+                    Price = decimal.Parse(priceString),
+                    Repair = decimal.Parse(repairString)
+                };
 
+                if (PaymantComboBox.Text == "В Брой")
+                {
                     SaveLineIncome(entity);
                 }
-                else
+                else if (PaymantComboBox.Text == "POS")
                 {
-                    articleBox.Select();
+
                 }
             }
-            else if (PaymantComboBox.Text == "POS")
+            else
             {
-
+                articleBox.Select();
             }
+
+           
            
 
         }
@@ -835,7 +836,7 @@ namespace iTech
                 }
                 else
                 {
-                    dateBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightBlue;
+                    dateBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCyan;
                 }                
                               
             }
@@ -861,7 +862,7 @@ namespace iTech
                 }
                 else
                 {
-                    refferenceIncomeBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightBlue;
+                    refferenceIncomeBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCyan;
                 }
 
             }
@@ -887,7 +888,7 @@ namespace iTech
                 }
                 else
                 {
-                    refferenceCostBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightBlue;
+                    refferenceCostBox.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.LightCyan;
                 }
 
             }
