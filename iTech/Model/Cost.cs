@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace DataBase.Model
+namespace iTech.Model
 {
     public partial class Cost
     {

@@ -42,6 +42,7 @@ namespace iTech
             this.EditRepair = new System.Windows.Forms.TextBox();
             this.EditButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
+            this.EditcomboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.EditIncomeDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@ namespace iTech
             // 
             this.CloseButton.BackColor = System.Drawing.Color.DimGray;
             this.CloseButton.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.CloseButton.Location = new System.Drawing.Point(439, 500);
+            this.CloseButton.Location = new System.Drawing.Point(439, 490);
             this.CloseButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.CloseButton.Name = "CloseButton";
             this.CloseButton.Size = new System.Drawing.Size(118, 36);
@@ -98,11 +99,12 @@ namespace iTech
             this.EditIncomeDataGridView.RowHeadersWidth = 51;
             this.EditIncomeDataGridView.RowTemplate.Height = 25;
             this.EditIncomeDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EditIncomeDataGridView.Size = new System.Drawing.Size(933, 319);
+            this.EditIncomeDataGridView.Size = new System.Drawing.Size(933, 300);
             this.EditIncomeDataGridView.TabIndex = 1;
             this.EditIncomeDataGridView.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.EditIncomeDataGridView_CellMouseLeave);
             this.EditIncomeDataGridView.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EditIncomeDataGridView_CellMouseMove);
             this.EditIncomeDataGridView.CellMouseUp += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EditIncome);
+            this.EditIncomeDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.EditIncomeDataGridView_DataBindingComplete);
             this.EditIncomeDataGridView.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.EditIncome);
             // 
             // EditArticle
@@ -110,7 +112,7 @@ namespace iTech
             this.EditArticle.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.EditArticle.Location = new System.Drawing.Point(87, 354);
             this.EditArticle.Name = "EditArticle";
-            this.EditArticle.Size = new System.Drawing.Size(512, 36);
+            this.EditArticle.Size = new System.Drawing.Size(512, 31);
             this.EditArticle.TabIndex = 2;
             this.EditArticle.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditArticle_KeyDown);
             // 
@@ -119,7 +121,7 @@ namespace iTech
             this.EditQwantity.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.EditQwantity.Location = new System.Drawing.Point(620, 354);
             this.EditQwantity.Name = "EditQwantity";
-            this.EditQwantity.Size = new System.Drawing.Size(30, 36);
+            this.EditQwantity.Size = new System.Drawing.Size(30, 31);
             this.EditQwantity.TabIndex = 3;
             this.EditQwantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditQwantity_KeyDown);
             this.EditQwantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditQwantity_KeyPress);
@@ -129,7 +131,7 @@ namespace iTech
             this.EditPrice.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.EditPrice.Location = new System.Drawing.Point(670, 354);
             this.EditPrice.Name = "EditPrice";
-            this.EditPrice.Size = new System.Drawing.Size(100, 36);
+            this.EditPrice.Size = new System.Drawing.Size(100, 31);
             this.EditPrice.TabIndex = 4;
             this.EditPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditPrice_KeyDown);
             this.EditPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditPrice_KeyPress);
@@ -139,7 +141,7 @@ namespace iTech
             this.EditRepair.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.EditRepair.Location = new System.Drawing.Point(792, 354);
             this.EditRepair.Name = "EditRepair";
-            this.EditRepair.Size = new System.Drawing.Size(100, 36);
+            this.EditRepair.Size = new System.Drawing.Size(100, 31);
             this.EditRepair.TabIndex = 5;
             this.EditRepair.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EditRepair_KeyDown);
             this.EditRepair.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.EditRepair_KeyPress);
@@ -167,12 +169,25 @@ namespace iTech
             this.DeleteButton.UseVisualStyleBackColor = false;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
+            // EditcomboBox
+            // 
+            this.EditcomboBox.FormattingEnabled = true;
+            this.EditcomboBox.Items.AddRange(new object[] {
+            "В Брой",
+            "POS"});
+            this.EditcomboBox.Location = new System.Drawing.Point(133, 420);
+            this.EditcomboBox.Name = "EditcomboBox";
+            this.EditcomboBox.Size = new System.Drawing.Size(121, 31);
+            this.EditcomboBox.TabIndex = 8;
+            this.EditcomboBox.Text = "В Брой";
+            // 
             // Edit
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(1000, 550);
+            this.Controls.Add(this.EditcomboBox);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.EditButton);
             this.Controls.Add(this.EditRepair);
@@ -206,5 +221,6 @@ namespace iTech
         private System.Windows.Forms.TextBox EditRepair;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.ComboBox EditcomboBox;
     }
 }

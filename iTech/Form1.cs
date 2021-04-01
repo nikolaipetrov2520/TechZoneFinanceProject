@@ -4,7 +4,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using DataBase.Model;
+using iTech.Model;
 using iTech.Model;
 
 namespace iTech
@@ -31,6 +31,7 @@ namespace iTech
             GetCostForDay();
             articleBox.Select();
             cashBox.Text = GetCash();
+            POSCashBox.Text = GetPOSCesh();
             cash2Box.Text = GetCash2();
         }
 
@@ -72,7 +73,8 @@ namespace iTech
                      Article = x.Article,
                      Quantity = x.Quantity,
                      Price = x.Price,
-                     Repair = x.Repair
+                     Repair = x.Repair,
+                     Paymant = x.Type.TypeName,
                  })
                  .ToList();
 
@@ -138,32 +140,38 @@ namespace iTech
                         repairString = repStr1 + '.' + repStr2;
                     }
                 }
+                int paymant = 1;
+                decimal posPrice = 0m;
+                decimal posRepair = 0m;
+                if (PaymantComboBox.Text == "В Брой")
+                {
+                    paymant = 1;
+                    posPrice = decimal.Parse(priceString);
+                    posRepair = decimal.Parse(repairString);
+                }
+                else if (PaymantComboBox.Text == "POS")
+                {
+                    paymant = 2;
+                    posPrice = decimal.Parse(priceString) - decimal.Parse(priceString) * 0.01m;
+                    posRepair = decimal.Parse(repairString) - decimal.Parse(repairString) * 0.01m;
+
+                }
 
                 var entity = new Income
                 {
                     Date = DateTime.Now,
                     Article = articleBox.Text,
                     Quantity = int.Parse(quantityString),
-                    Price = decimal.Parse(priceString),
-                    Repair = decimal.Parse(repairString)
+                    Price = posPrice,
+                    Repair = posRepair,
+                    TypeId = paymant,
                 };
-
-                if (PaymantComboBox.Text == "В Брой")
-                {
-                    SaveLineIncome(entity);
-                }
-                else if (PaymantComboBox.Text == "POS")
-                {
-
-                }
+                SaveLineIncome(entity);
             }
             else
             {
                 articleBox.Select();
-            }
-
-           
-           
+            }       
 
         }
 
@@ -176,6 +184,7 @@ namespace iTech
             GetRefferenceIncomeBoxData();
 
             cashBox.Text = GetCash();
+            POSCashBox.Text = GetPOSCesh();
             articleBox.Text = "";
             quantityBox.Text = "1";
             priceBox.Text = "0";
@@ -193,18 +202,22 @@ namespace iTech
             refferenceIncomeBox.Columns[0].Width = 118;
             refferenceIncomeBox.Columns[0].HeaderText = "Дата";
             refferenceIncomeBox.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            refferenceIncomeBox.Columns[1].Width = 521;
+            refferenceIncomeBox.Columns[1].Width = 421;
             refferenceIncomeBox.Columns[1].HeaderText = "Артикул";
             refferenceIncomeBox.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             refferenceIncomeBox.Columns[2].Width = 60;
             refferenceIncomeBox.Columns[2].HeaderText = "Брой";
             refferenceIncomeBox.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            refferenceIncomeBox.Columns[3].HeaderText = "Цена";
-            refferenceIncomeBox.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            refferenceIncomeBox.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            refferenceIncomeBox.Columns[4].HeaderText = "Ремонт";
+            refferenceIncomeBox.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            refferenceIncomeBox.Columns[3].Width = 100;
+            refferenceIncomeBox.Columns[3].HeaderText = "Плащане";
+            refferenceIncomeBox.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            refferenceIncomeBox.Columns[4].HeaderText = "Цена";
             refferenceIncomeBox.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             refferenceIncomeBox.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            refferenceIncomeBox.Columns[5].HeaderText = "Ремонт";
+            refferenceIncomeBox.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            refferenceIncomeBox.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
 
         }
@@ -487,7 +500,8 @@ namespace iTech
                     Article = x.Article,
                     Quantity = x.Quantity,
                     Price = x.Price,
-                    Repair = x.Repair
+                    Repair = x.Repair,
+                    Paymant = x.Type.TypeName,
                 })
                 .ToList();
 
@@ -504,17 +518,20 @@ namespace iTech
             dateBox.EnableHeadersVisualStyles = false;
             dateBox.Columns[0].Width = 118;
             dateBox.Columns[0].HeaderText = "Дата";
-            dateBox.Columns[1].Width = 381;
+            dateBox.Columns[1].Width = 341;
             dateBox.Columns[1].HeaderText = "Артикул";
             dateBox.Columns[2].Width = 60;
             dateBox.Columns[2].HeaderText = "Брой";
             dateBox.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dateBox.Columns[3].HeaderText = "Цена";
-            dateBox.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dateBox.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dateBox.Columns[4].HeaderText = "Ремонт";
+            dateBox.Columns[3].Width = 90;
+            dateBox.Columns[3].HeaderText = "Плащане";
+            dateBox.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dateBox.Columns[4].HeaderText = "Цена";
             dateBox.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             dateBox.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dateBox.Columns[5].HeaderText = "Ремонт";
+            dateBox.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dateBox.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dateIncomeBox.Text = sumIncome.ToString();
             dateRepairBox.Text = sumRepair.ToString();
             totalBox.Text = (sumIncome + sumRepair).ToString();
@@ -570,7 +587,7 @@ namespace iTech
             decimal incomeSum = 0;
             decimal repairSum = 0;
 
-            var incoms = techzone.Incomes
+            var incoms = techzone.Incomes.Where(X => X.TypeId == 1)
                  .ToList();
 
             foreach (var incom in incoms)
@@ -589,6 +606,31 @@ namespace iTech
             decimal cash = 0m;
 
             cash = (decimal)(sumIncom - costs);
+
+            return $"{cash:f2}".ToString();
+        }
+
+        private string GetPOSCesh()
+        {
+            decimal sumIncom = 0;
+            decimal incomeSum = 0;
+            decimal repairSum = 0;
+
+            var incoms = techzone.Incomes.Where(X => X.TypeId == 2)
+                 .ToList();
+            var posOutSum = techzone.PosPaymants.Sum(x => x.OutSum);
+
+            foreach (var incom in incoms)
+            {
+                incomeSum += (decimal)(incom.Quantity * incom.Price);
+                repairSum += (decimal)(incom.Quantity * incom.Repair);
+            }
+
+            sumIncom += incomeSum + repairSum;
+
+            decimal cash = 0m;
+
+            cash = (decimal)(sumIncom) - (decimal)posOutSum;
 
             return $"{cash:f2}".ToString();
         }
@@ -788,6 +830,7 @@ namespace iTech
             makeReference_Click(sender, e);
 
             cashBox.Text = GetCash();
+            POSCashBox.Text = GetPOSCesh();
             articleBox.Text = "";
             quantityBox.Text = "1";
             priceBox.Text = "0";
@@ -893,6 +936,21 @@ namespace iTech
 
             }
          
+        }
+
+        private void dateBox_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dateBox.ClearSelection();
+        }
+
+        private void refferenceCostBox_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            refferenceCostBox.ClearSelection();
+        }
+
+        private void refferenceIncomeBox_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            refferenceIncomeBox.ClearSelection();
         }
     }
 }

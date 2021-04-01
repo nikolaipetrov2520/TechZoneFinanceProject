@@ -1,4 +1,4 @@
-﻿using DataBase.Model;
+﻿using iTech.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +13,7 @@ namespace iTech
     public partial class Edit : Form
     {
 
-        private List<Income> dateIncomeList;
+        private List<EditIncomModel> dateIncomeList;
         private readonly TechZoneContext techzone;
         private int editId = 0;
 
@@ -23,7 +23,7 @@ namespace iTech
         public Edit(DateTime startDate, DateTime endDate, TechZoneContext techzone)
         {
             InitializeComponent();
-            dateIncomeList = new List<Income>();
+            dateIncomeList = new List<EditIncomModel>();
             this.startDate = startDate;
             this.endDate = endDate;
             this.techzone = techzone;
@@ -42,11 +42,11 @@ namespace iTech
 
             dateIncomeList = techzone.Incomes
                 .Where(x => x.Date >= startDate && x.Date <= endDate)
-                .Select(x => new Income
+                .Select(x => new EditIncomModel
                 {
                     Id = x.Id,
                     Date = x.Date,
-                    UserId = x.UserId,
+                    Type = x.Type.TypeName,
                     Article = x.Article,
                     Quantity = x.Quantity,
                     Price = x.Price,
@@ -69,18 +69,18 @@ namespace iTech
             EditIncomeDataGridView.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             EditIncomeDataGridView.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             EditIncomeDataGridView.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            EditIncomeDataGridView.Columns[2].Width = 50;
-            EditIncomeDataGridView.Columns[2].HeaderText = "User";
-            EditIncomeDataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            EditIncomeDataGridView.Columns[2].Width = 380;
+            EditIncomeDataGridView.Columns[2].HeaderText = "Артикул";
+            EditIncomeDataGridView.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            EditIncomeDataGridView.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             EditIncomeDataGridView.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            EditIncomeDataGridView.Columns[3].Width = 380;
-            EditIncomeDataGridView.Columns[3].HeaderText = "Артикул";
+            EditIncomeDataGridView.Columns[3].Width = 55;
+            EditIncomeDataGridView.Columns[3].HeaderText = "Брой";
             EditIncomeDataGridView.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            EditIncomeDataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            EditIncomeDataGridView.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             EditIncomeDataGridView.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-            EditIncomeDataGridView.Columns[4].Width = 55;
-            EditIncomeDataGridView.Columns[4].HeaderText = "Брой";
-            EditIncomeDataGridView.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            EditIncomeDataGridView.Columns[4].Width = 100;
+            EditIncomeDataGridView.Columns[4].HeaderText = "Плащане";
             EditIncomeDataGridView.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             EditIncomeDataGridView.Columns[5].HeaderText = "Цена";
             EditIncomeDataGridView.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -94,11 +94,16 @@ namespace iTech
 
         private void EditIncome(object sender, DataGridViewCellMouseEventArgs e)
         {
-            editId = int.Parse(EditIncomeDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
-            EditArticle.Text = EditIncomeDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
-            EditQwantity.Text = EditIncomeDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
-            EditPrice.Text = EditIncomeDataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
-            EditRepair.Text = EditIncomeDataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+            if (e.RowIndex > -1)
+            {
+                editId = int.Parse(EditIncomeDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+                EditArticle.Text = EditIncomeDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                EditQwantity.Text = EditIncomeDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                EditPrice.Text = EditIncomeDataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                EditRepair.Text = EditIncomeDataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+                EditcomboBox.Text = EditIncomeDataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
+            }
+            
         }
 
         private void EditButton_Click(object sender, EventArgs e)
@@ -154,12 +159,22 @@ namespace iTech
                             repairString = repStr1 + '.' + repStr2;
                         }
                     }
+                    int paymant = 1;
+                    if (EditcomboBox.Text == "В Брой")
+                    {
+                        paymant = 1;
+                    }
+                    else if (EditcomboBox.Text == "POS")
+                    {
+                        paymant = 2;
+                    }
 
                     var entity = techzone.Incomes.FirstOrDefault(X => X.Id == editId);
                     entity.Article = EditArticle.Text;
                     entity.Quantity = int.Parse(quantityString);
                     entity.Price = decimal.Parse(priceString);
                     entity.Repair = decimal.Parse(repairString);
+                    entity.TypeId = paymant;
 
 
 
@@ -342,6 +357,11 @@ namespace iTech
 
             }
       
+        }
+
+        private void EditIncomeDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            EditIncomeDataGridView.ClearSelection();
         }
     }
 }

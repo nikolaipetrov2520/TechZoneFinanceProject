@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7eU9H8P2WPRP0RgVEHo3h5+QcqMbyCpWDOobvSJjcogLD4kLKkq0TSWKnYbWoX6kuvYdnwu1yNc73BpPaRFtCQ==",
+  "dgSpecHash": "V6Qc1b8goGUsnqivUV8u2vCpVUT9mLkrnYwg+VF5TD4KGurrmE4rAufclXJB09pNQY1BUYgWSW9elPkU1CAnoQ==",
   "success": true,
-  "projectFilePath": "D:\\TechZone\\TechZoneFinanceProject\\iTech\\iTech.csproj",
+  "projectFilePath": "C:\\Users\\user\\source\\repos\\iTech\\iTech\\iTech.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

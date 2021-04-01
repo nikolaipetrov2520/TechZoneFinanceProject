@@ -20,12 +20,14 @@ namespace DataBase.Model
         public virtual DbSet<Cash2> Cash2s { get; set; }
         public virtual DbSet<Cost> Costs { get; set; }
         public virtual DbSet<Income> Incomes { get; set; }
+        public virtual DbSet<PosPaymant> PosPaymants { get; set; }
+        public virtual DbSet<Type> Types { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                //optionsBuilder.UseSqlServer(@"Server=ITECH-PC\SQLEXPRESS19;Database=TechZone;Trusted_Connection=True;");
                 optionsBuilder.UseSqlServer("Server=.;Database=TechZone;Trusted_Connection=True;");
             }
         }
@@ -64,9 +66,29 @@ namespace DataBase.Model
 
                 entity.Property(e => e.Repair).HasColumnType("decimal(18, 2)");
 
-                entity.Property(e => e.UserId)
-                    .HasMaxLength(250)
-                    .HasColumnName("UserID");
+                entity.HasOne(d => d.Type)
+                    .WithMany(p => p.Incomes)
+                    .HasForeignKey(d => d.TypeId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Incomes_Type");
+            });
+
+            modelBuilder.Entity<PosPaymant>(entity =>
+            {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.Property(e => e.OutSum).HasColumnType("decimal(18, 2)");
+            });
+
+            modelBuilder.Entity<Type>(entity =>
+            {
+                entity.ToTable("Type");
+
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.Property(e => e.TypeName)
+                    .IsRequired()
+                    .HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

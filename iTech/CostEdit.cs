@@ -1,4 +1,4 @@
-﻿using DataBase.Model;
+﻿using iTech.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -76,10 +76,14 @@ namespace iTech
 
         private void EditCost(object sender, DataGridViewCellMouseEventArgs e)
         {
-            editId = int.Parse(EditCostDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
-            EditNameCostBox.Text = EditCostDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-            EditSumCostBox.Text = EditCostDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
-           
+            if (e.RowIndex > -1)
+            {
+                editId = int.Parse(EditCostDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString());
+                EditNameCostBox.Text = EditCostDataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
+                EditSumCostBox.Text = EditCostDataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+
+            }
+
         }
 
         private void EditCostButton_Click(object sender, EventArgs e)
@@ -234,6 +238,11 @@ namespace iTech
 
             }
           
+        }
+
+        private void EditCostDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            EditCostDataGridView.ClearSelection();
         }
     }
 }
