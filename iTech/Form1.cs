@@ -314,7 +314,7 @@ namespace iTech
         {
             string posSum = "0";
 
-            if (POSTransferBox.Text != "")
+            if (POSTransferBox.Text != "" && POSTransferBox.Text != "0")
             {
                 if (POSTransferBox.Text != "." && POSTransferBox.Text != ",")
                 {
@@ -332,33 +332,35 @@ namespace iTech
                 }
                 var pos = new PosPaymant
                 {
-                    OutSum = decimal.Parse(posSum),
+                    OutSum = decimal.Parse(posSum) + 1,
                 };
                 techzone.PosPaymants.Add(pos);
                 techzone.SaveChanges();
+
+                var entity = new Income
+                {
+                    Date = DateTime.Now,
+                    Article = "Прехвърляне на сума от POS",
+                    Quantity = 1,
+                    Price = decimal.Parse(posSum),
+                    Repair = 0,
+                    TypeId = 1,
+                };
+                techzone.Incomes.Add(entity);
+                techzone.SaveChanges();
+
+                POSTransferBox.Text = "0";
+                sum.Text = IncomForDay();
+                GetRefferenceIncomeBoxData();
+                cashBox.Text = GetCash();
+                POSCashBox.Text = GetPOSCesh();
             }
             else
             {
                 POSTransferBox.Select();
             }
 
-            var entity = new Income
-            {
-                Date = DateTime.Now,
-                Article = "Прехвърляне на сума от POS",
-                Quantity = 1,
-                Price = decimal.Parse(posSum),
-                Repair = 0,
-                TypeId = 1,
-            };
-            techzone.Incomes.Add(entity);
-            techzone.SaveChanges();
-
-            POSTransferBox.Text = "0";
-            sum.Text = IncomForDay();
-            GetRefferenceIncomeBoxData();
-            cashBox.Text = GetCash();
-            POSCashBox.Text = GetPOSCesh();
+           
         }
 
         private void POSTransferButton_KeyDown(object sender, KeyEventArgs e)
