@@ -945,6 +945,8 @@
             this.POSTransferButton.TabIndex = 7;
             this.POSTransferButton.Text = "Прехвърли";
             this.POSTransferButton.UseVisualStyleBackColor = false;
+            this.POSTransferButton.Click += new System.EventHandler(this.POSTransferButton_Click);
+            this.POSTransferButton.KeyDown += new System.Windows.Forms.KeyEventHandler(this.POSTransferButton_KeyDown);
             // 
             // POSOperationsLabel
             // 
@@ -975,6 +977,8 @@
             this.POSTransferBox.TabIndex = 4;
             this.POSTransferBox.Text = "0";
             this.POSTransferBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.POSTransferBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.POSTransferBox_KeyDown);
+            this.POSTransferBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.POSTransferBox_KeyPress);
             // 
             // POSCashBox
             // 
@@ -1134,6 +1138,7 @@
             this.ClientSize = new System.Drawing.Size(1351, 704);
             this.Controls.Add(this.tabControl1);
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;

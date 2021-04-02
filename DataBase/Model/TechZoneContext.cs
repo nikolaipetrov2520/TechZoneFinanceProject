@@ -27,7 +27,7 @@ namespace DataBase.Model
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //optionsBuilder.UseSqlServer(@"Server=ITECH-PC\SQLEXPRESS19;Database=TechZone;Trusted_Connection=True;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Server=.;Database=TechZone;Trusted_Connection=True;");
             }
         }
@@ -75,8 +75,6 @@ namespace DataBase.Model
 
             modelBuilder.Entity<PosPaymant>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.OutSum).HasColumnType("decimal(18, 2)");
             });
 

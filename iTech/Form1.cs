@@ -283,6 +283,94 @@ namespace iTech
             }
         }
 
+        private void POSTransferBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                POSTransferButton_Click(sender, e);
+                POSTransferButton.Select();
+                
+            }
+        }
+
+        private void POSTransferBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verify that the pressed key isn't CTRL or any non-numeric digit
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void POSTransferButton_Click(object sender, EventArgs e)
+        {
+            string posSum = "0";
+
+            if (POSTransferBox.Text != "")
+            {
+                if (POSTransferBox.Text != "." && POSTransferBox.Text != ",")
+                {
+                    posSum = POSTransferBox.Text.ToString();
+                }
+                for (int i = 0; i < posSum.Length; i++)
+                {
+                    if (posSum[i] == ',')
+                    {
+                        string repStr1 = posSum.Substring(0, i);
+                        string repStr2 = posSum.Substring(i + 1);
+                        posSum = repStr1 + '.' + repStr2;
+                        
+                    }
+                }
+                var pos = new PosPaymant
+                {
+                    OutSum = decimal.Parse(posSum),
+                };
+                techzone.PosPaymants.Add(pos);
+                techzone.SaveChanges();
+            }
+            else
+            {
+                POSTransferBox.Select();
+            }
+
+            var entity = new Income
+            {
+                Date = DateTime.Now,
+                Article = "Прехвърляне на сума от POS",
+                Quantity = 1,
+                Price = decimal.Parse(posSum),
+                Repair = 0,
+                TypeId = 1,
+            };
+            techzone.Incomes.Add(entity);
+            techzone.SaveChanges();
+
+            POSTransferBox.Text = "0";
+            sum.Text = IncomForDay();
+            GetRefferenceIncomeBoxData();
+            cashBox.Text = GetCash();
+            POSCashBox.Text = GetPOSCesh();
+        }
+
+        private void POSTransferButton_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+                POSTransferButton_Click(sender, e);
+            }
+        }
+
         private void submit_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -952,5 +1040,7 @@ namespace iTech
         {
             refferenceIncomeBox.ClearSelection();
         }
+
+       
     }
 }

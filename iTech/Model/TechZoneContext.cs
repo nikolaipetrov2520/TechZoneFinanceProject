@@ -75,8 +75,6 @@ namespace iTech.Model
 
             modelBuilder.Entity<PosPaymant>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.OutSum).HasColumnType("decimal(18, 2)");
             });
 
