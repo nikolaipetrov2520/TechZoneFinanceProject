@@ -32,6 +32,7 @@ namespace iTech
             articleBox.Select();
             cashBox.Text = GetCash();
             POSCashBox.Text = GetPOSCesh();
+            TotalSumCashBox.Text = (decimal.Parse(cashBox.Text) + decimal.Parse(POSCashBox.Text)).ToString("F2");
             cash2Box.Text = GetCash2();
         }
 
@@ -152,8 +153,8 @@ namespace iTech
                 else if (PaymantComboBox.Text == "POS")
                 {
                     paymant = 2;
-                    posPrice = decimal.Parse(priceString) - decimal.Parse(priceString) * 0.01m;
-                    posRepair = decimal.Parse(repairString) - decimal.Parse(repairString) * 0.01m;
+                    posPrice = decimal.Parse(priceString) - decimal.Parse(priceString) * 0.0099m;
+                    posRepair = decimal.Parse(repairString) - decimal.Parse(repairString) * 0.0099m;
 
                 }
 
@@ -185,6 +186,7 @@ namespace iTech
 
             cashBox.Text = GetCash();
             POSCashBox.Text = GetPOSCesh();
+            TotalSumCashBox.Text = (decimal.Parse(cashBox.Text) + decimal.Parse(POSCashBox.Text)).ToString("F2");
             articleBox.Text = "";
             quantityBox.Text = "1";
             priceBox.Text = "0";
@@ -354,6 +356,7 @@ namespace iTech
                 GetRefferenceIncomeBoxData();
                 cashBox.Text = GetCash();
                 POSCashBox.Text = GetPOSCesh();
+                TotalSumCashBox.Text = (decimal.Parse(cashBox.Text) + decimal.Parse(POSCashBox.Text)).ToString("F2");
             }
             else
             {
@@ -466,6 +469,7 @@ namespace iTech
             GetRefferenceCostBoxData();
 
             cashBox.Text = GetCash();
+            TotalSumCashBox.Text = (decimal.Parse(cashBox.Text) + decimal.Parse(POSCashBox.Text)).ToString("F2");
             costNameBox.Text = "";
             costSumBox.Text = "0";
         }
@@ -485,7 +489,7 @@ namespace iTech
 
             sum = (decimal)costs;
             costReferenceBox.Text = sum.ToString();
-            return sum.ToString();
+            return sum.ToString("F2");
         }
 
         private string IncomForDay()
@@ -510,7 +514,7 @@ namespace iTech
 
             incomeSumBox.Text = incomeSum.ToString();
             incomeRepairBox.Text = repairSum.ToString();
-            return sum.ToString();
+            return sum.ToString("F2");
         }
 
         private void quantityBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -839,6 +843,7 @@ namespace iTech
                 techzone.Cash2s.Add(entity);
                 techzone.SaveChanges();
                 cashBox.Text = GetCash();
+                TotalSumCashBox.Text = (decimal.Parse(cashBox.Text) + decimal.Parse(POSCashBox.Text)).ToString("F2");
                 costForDayBox.Text = CostForDay();
                 GetRefferenceCostBoxData();
             }
@@ -887,6 +892,7 @@ namespace iTech
                 techzone.Cash2s.Add(entity);
                 techzone.SaveChanges();
                 cashBox.Text = GetCash();
+                TotalSumCashBox.Text = (decimal.Parse(cashBox.Text) + decimal.Parse(POSCashBox.Text)).ToString("F2");
                 sum.Text = IncomForDay();
                 GetRefferenceIncomeBoxData();
             }
@@ -921,6 +927,7 @@ namespace iTech
 
             cashBox.Text = GetCash();
             POSCashBox.Text = GetPOSCesh();
+            TotalSumCashBox.Text = (decimal.Parse(cashBox.Text) + decimal.Parse(POSCashBox.Text)).ToString("F2");
             articleBox.Text = "";
             quantityBox.Text = "1";
             priceBox.Text = "0";
@@ -942,6 +949,7 @@ namespace iTech
             MakeReference2_Click(sender, e);
 
             cashBox.Text = GetCash();
+            TotalSumCashBox.Text = (decimal.Parse(cashBox.Text) + decimal.Parse(POSCashBox.Text)).ToString("F2");
             articleBox.Text = "";
             quantityBox.Text = "1";
             priceBox.Text = "0";

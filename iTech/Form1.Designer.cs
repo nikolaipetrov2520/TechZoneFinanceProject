@@ -99,6 +99,8 @@
             this.costSum = new System.Windows.Forms.Label();
             this.costName = new System.Windows.Forms.Label();
             this.tab3 = new System.Windows.Forms.TabPage();
+            this.totalSumCashLabel = new System.Windows.Forms.Label();
+            this.TotalSumCashBox = new System.Windows.Forms.TextBox();
             this.POSTransferSumLabel = new System.Windows.Forms.Label();
             this.POSTransferButton = new System.Windows.Forms.Button();
             this.POSOperationsLabel = new System.Windows.Forms.Label();
@@ -909,6 +911,8 @@
             // tab3
             // 
             this.tab3.BackColor = System.Drawing.Color.SteelBlue;
+            this.tab3.Controls.Add(this.totalSumCashLabel);
+            this.tab3.Controls.Add(this.TotalSumCashBox);
             this.tab3.Controls.Add(this.POSTransferSumLabel);
             this.tab3.Controls.Add(this.POSTransferButton);
             this.tab3.Controls.Add(this.POSOperationsLabel);
@@ -926,11 +930,32 @@
             this.tab3.TabIndex = 3;
             this.tab3.Text = "Каса";
             // 
+            // totalSumCashLabel
+            // 
+            this.totalSumCashLabel.AutoSize = true;
+            this.totalSumCashLabel.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.totalSumCashLabel.Location = new System.Drawing.Point(599, 203);
+            this.totalSumCashLabel.Name = "totalSumCashLabel";
+            this.totalSumCashLabel.Size = new System.Drawing.Size(116, 47);
+            this.totalSumCashLabel.TabIndex = 10;
+            this.totalSumCashLabel.Text = "Общо";
+            // 
+            // TotalSumCashBox
+            // 
+            this.TotalSumCashBox.BackColor = System.Drawing.Color.Gainsboro;
+            this.TotalSumCashBox.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TotalSumCashBox.Location = new System.Drawing.Point(530, 272);
+            this.TotalSumCashBox.Name = "TotalSumCashBox";
+            this.TotalSumCashBox.ReadOnly = true;
+            this.TotalSumCashBox.Size = new System.Drawing.Size(246, 61);
+            this.TotalSumCashBox.TabIndex = 9;
+            this.TotalSumCashBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // POSTransferSumLabel
             // 
             this.POSTransferSumLabel.AutoSize = true;
             this.POSTransferSumLabel.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.POSTransferSumLabel.Location = new System.Drawing.Point(501, 468);
+            this.POSTransferSumLabel.Location = new System.Drawing.Point(481, 497);
             this.POSTransferSumLabel.Name = "POSTransferSumLabel";
             this.POSTransferSumLabel.Size = new System.Drawing.Size(64, 30);
             this.POSTransferSumLabel.TabIndex = 8;
@@ -939,7 +964,7 @@
             // POSTransferButton
             // 
             this.POSTransferButton.BackColor = System.Drawing.Color.DimGray;
-            this.POSTransferButton.Location = new System.Drawing.Point(735, 515);
+            this.POSTransferButton.Location = new System.Drawing.Point(715, 544);
             this.POSTransferButton.Name = "POSTransferButton";
             this.POSTransferButton.Size = new System.Drawing.Size(126, 46);
             this.POSTransferButton.TabIndex = 7;
@@ -952,7 +977,7 @@
             // 
             this.POSOperationsLabel.AutoSize = true;
             this.POSOperationsLabel.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.POSOperationsLabel.Location = new System.Drawing.Point(496, 405);
+            this.POSOperationsLabel.Location = new System.Drawing.Point(476, 434);
             this.POSOperationsLabel.Name = "POSOperationsLabel";
             this.POSOperationsLabel.Size = new System.Drawing.Size(355, 47);
             this.POSOperationsLabel.TabIndex = 6;
@@ -962,7 +987,7 @@
             // 
             this.POSCashLabel.AutoSize = true;
             this.POSCashLabel.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.POSCashLabel.Location = new System.Drawing.Point(789, 100);
+            this.POSCashLabel.Location = new System.Drawing.Point(772, 34);
             this.POSCashLabel.Name = "POSCashLabel";
             this.POSCashLabel.Size = new System.Drawing.Size(297, 47);
             this.POSCashLabel.TabIndex = 5;
@@ -971,7 +996,7 @@
             // POSTransferBox
             // 
             this.POSTransferBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.POSTransferBox.Location = new System.Drawing.Point(471, 516);
+            this.POSTransferBox.Location = new System.Drawing.Point(451, 545);
             this.POSTransferBox.Name = "POSTransferBox";
             this.POSTransferBox.Size = new System.Drawing.Size(126, 39);
             this.POSTransferBox.TabIndex = 4;
@@ -984,7 +1009,7 @@
             // 
             this.POSCashBox.BackColor = System.Drawing.Color.Gainsboro;
             this.POSCashBox.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.POSCashBox.Location = new System.Drawing.Point(817, 199);
+            this.POSCashBox.Location = new System.Drawing.Point(792, 111);
             this.POSCashBox.Name = "POSCashBox";
             this.POSCashBox.ReadOnly = true;
             this.POSCashBox.Size = new System.Drawing.Size(246, 61);
@@ -994,7 +1019,7 @@
             // label5
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Location = new System.Drawing.Point(58, 362);
+            this.label5.Location = new System.Drawing.Point(57, 386);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(1200, 2);
             this.label5.TabIndex = 2;
@@ -1003,7 +1028,7 @@
             // 
             this.cashBox.BackColor = System.Drawing.Color.Gainsboro;
             this.cashBox.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cashBox.Location = new System.Drawing.Point(284, 199);
+            this.cashBox.Location = new System.Drawing.Point(259, 111);
             this.cashBox.Name = "cashBox";
             this.cashBox.ReadOnly = true;
             this.cashBox.Size = new System.Drawing.Size(246, 61);
@@ -1014,7 +1039,7 @@
             // 
             this.cashLabel.AutoSize = true;
             this.cashLabel.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cashLabel.Location = new System.Drawing.Point(252, 100);
+            this.cashLabel.Location = new System.Drawing.Point(235, 34);
             this.cashLabel.Name = "cashLabel";
             this.cashLabel.Size = new System.Drawing.Size(300, 47);
             this.cashLabel.TabIndex = 0;
@@ -1248,6 +1273,8 @@
         private System.Windows.Forms.Label POSOperationsLabel;
         private System.Windows.Forms.Label POSTransferSumLabel;
         private System.Windows.Forms.Button POSTransferButton;
+        private System.Windows.Forms.Label totalSumCashLabel;
+        private System.Windows.Forms.TextBox TotalSumCashBox;
     }
 }
 
