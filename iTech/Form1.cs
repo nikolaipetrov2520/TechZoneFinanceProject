@@ -886,6 +886,7 @@ namespace iTech
                     Quantity = 1,
                     Price = cash2Sum,
                     Repair = 0.00m,
+                    TypeId = 1,
 
                 };
                 techzone.Incomes.Add(income);
