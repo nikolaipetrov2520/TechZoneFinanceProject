@@ -53,6 +53,10 @@
             this.costReferenceBox = new System.Windows.Forms.TextBox();
             this.costReferenceLabel = new System.Windows.Forms.Label();
             this.reference3 = new System.Windows.Forms.TabPage();
+            this.WMYLabel = new System.Windows.Forms.Label();
+            this.YearButton = new System.Windows.Forms.Button();
+            this.MonthButton = new System.Windows.Forms.Button();
+            this.WeekButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -119,6 +123,8 @@
             this.cash2OutLabel = new System.Windows.Forms.Label();
             this.cash2InLlabel = new System.Windows.Forms.Label();
             this.cash2Label = new System.Windows.Forms.Label();
+            this.SearchBox = new System.Windows.Forms.TextBox();
+            this.SearchLabel = new System.Windows.Forms.Label();
             tab5 = new System.Windows.Forms.TabPage();
             tab5.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -337,6 +343,12 @@
             // reference3
             // 
             this.reference3.BackColor = System.Drawing.Color.SteelBlue;
+            this.reference3.Controls.Add(this.SearchLabel);
+            this.reference3.Controls.Add(this.SearchBox);
+            this.reference3.Controls.Add(this.WMYLabel);
+            this.reference3.Controls.Add(this.YearButton);
+            this.reference3.Controls.Add(this.MonthButton);
+            this.reference3.Controls.Add(this.WeekButton);
             this.reference3.Controls.Add(this.label4);
             this.reference3.Controls.Add(this.label3);
             this.reference3.Controls.Add(this.label2);
@@ -366,6 +378,45 @@
             this.reference3.TabIndex = 2;
             this.reference3.Text = "Справка по дати";
             // 
+            // WMYLabel
+            // 
+            this.WMYLabel.AutoSize = true;
+            this.WMYLabel.Location = new System.Drawing.Point(120, 102);
+            this.WMYLabel.Name = "WMYLabel";
+            this.WMYLabel.Size = new System.Drawing.Size(204, 25);
+            this.WMYLabel.TabIndex = 26;
+            this.WMYLabel.Text = "Справка за последната:";
+            // 
+            // YearButton
+            // 
+            this.YearButton.BackColor = System.Drawing.Color.DimGray;
+            this.YearButton.Location = new System.Drawing.Point(294, 141);
+            this.YearButton.Name = "YearButton";
+            this.YearButton.Size = new System.Drawing.Size(100, 40);
+            this.YearButton.TabIndex = 25;
+            this.YearButton.Text = "Година";
+            this.YearButton.UseVisualStyleBackColor = false;
+            // 
+            // MonthButton
+            // 
+            this.MonthButton.BackColor = System.Drawing.Color.DimGray;
+            this.MonthButton.Location = new System.Drawing.Point(170, 141);
+            this.MonthButton.Name = "MonthButton";
+            this.MonthButton.Size = new System.Drawing.Size(100, 40);
+            this.MonthButton.TabIndex = 24;
+            this.MonthButton.Text = "Месец";
+            this.MonthButton.UseVisualStyleBackColor = false;
+            // 
+            // WeekButton
+            // 
+            this.WeekButton.BackColor = System.Drawing.Color.DimGray;
+            this.WeekButton.Location = new System.Drawing.Point(45, 141);
+            this.WeekButton.Name = "WeekButton";
+            this.WeekButton.Size = new System.Drawing.Size(100, 40);
+            this.WeekButton.TabIndex = 23;
+            this.WeekButton.Text = "Седмица";
+            this.WeekButton.UseVisualStyleBackColor = false;
+            // 
             // label4
             // 
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -377,7 +428,7 @@
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Location = new System.Drawing.Point(52, 120);
+            this.label3.Location = new System.Drawing.Point(45, 199);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(348, 2);
             this.label3.TabIndex = 21;
@@ -386,7 +437,7 @@
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(52, 340);
+            this.label2.Location = new System.Drawing.Point(44, 401);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(348, 2);
             this.label2.TabIndex = 20;
@@ -394,7 +445,7 @@
             // CostLabel
             // 
             this.CostLabel.AutoSize = true;
-            this.CostLabel.Location = new System.Drawing.Point(301, 141);
+            this.CostLabel.Location = new System.Drawing.Point(294, 211);
             this.CostLabel.Name = "CostLabel";
             this.CostLabel.Size = new System.Drawing.Size(78, 25);
             this.CostLabel.TabIndex = 19;
@@ -404,7 +455,7 @@
             // 
             this.IncomLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.IncomLabel.AutoSize = true;
-            this.IncomLabel.Location = new System.Drawing.Point(66, 141);
+            this.IncomLabel.Location = new System.Drawing.Point(59, 211);
             this.IncomLabel.Name = "IncomLabel";
             this.IncomLabel.Size = new System.Drawing.Size(85, 25);
             this.IncomLabel.TabIndex = 18;
@@ -413,7 +464,7 @@
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(226, 140);
+            this.label1.Location = new System.Drawing.Point(219, 211);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(2, 180);
             this.label1.TabIndex = 17;
@@ -422,7 +473,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.DimGray;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(283, 255);
+            this.button1.Location = new System.Drawing.Point(275, 316);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 45);
             this.button1.TabIndex = 16;
@@ -434,7 +485,7 @@
             // 
             this.EditButton.BackColor = System.Drawing.Color.DimGray;
             this.EditButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EditButton.Location = new System.Drawing.Point(52, 255);
+            this.EditButton.Location = new System.Drawing.Point(44, 316);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(117, 45);
             this.EditButton.TabIndex = 15;
@@ -446,7 +497,7 @@
             // 
             this.MakeReference2.BackColor = System.Drawing.Color.DimGray;
             this.MakeReference2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MakeReference2.Location = new System.Drawing.Point(283, 182);
+            this.MakeReference2.Location = new System.Drawing.Point(275, 243);
             this.MakeReference2.Name = "MakeReference2";
             this.MakeReference2.Size = new System.Drawing.Size(117, 48);
             this.MakeReference2.TabIndex = 14;
@@ -479,13 +530,13 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dateBox.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dateBox.Location = new System.Drawing.Point(481, 63);
+            this.dateBox.Location = new System.Drawing.Point(481, 78);
             this.dateBox.Name = "dateBox";
             this.dateBox.ReadOnly = true;
             this.dateBox.RowHeadersVisible = false;
             this.dateBox.RowHeadersWidth = 5;
             this.dateBox.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dateBox.Size = new System.Drawing.Size(778, 474);
+            this.dateBox.Size = new System.Drawing.Size(778, 459);
             this.dateBox.TabIndex = 13;
             this.dateBox.Text = "dataGridView1";
             this.dateBox.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dateBox_CellMouseLeave);
@@ -497,7 +548,7 @@
             this.totalBox.BackColor = System.Drawing.Color.Gainsboro;
             this.totalBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.totalBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.totalBox.Location = new System.Drawing.Point(168, 487);
+            this.totalBox.Location = new System.Drawing.Point(159, 496);
             this.totalBox.Name = "totalBox";
             this.totalBox.ReadOnly = true;
             this.totalBox.Size = new System.Drawing.Size(123, 43);
@@ -507,7 +558,7 @@
             // total
             // 
             this.total.AutoSize = true;
-            this.total.Location = new System.Drawing.Point(200, 447);
+            this.total.Location = new System.Drawing.Point(189, 468);
             this.total.Name = "total";
             this.total.Size = new System.Drawing.Size(62, 25);
             this.total.TabIndex = 11;
@@ -517,7 +568,7 @@
             // 
             this.makeReference.BackColor = System.Drawing.Color.DimGray;
             this.makeReference.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.makeReference.Location = new System.Drawing.Point(52, 182);
+            this.makeReference.Location = new System.Drawing.Point(44, 243);
             this.makeReference.Name = "makeReference";
             this.makeReference.Size = new System.Drawing.Size(117, 48);
             this.makeReference.TabIndex = 10;
@@ -528,7 +579,7 @@
             // dateRepair
             // 
             this.dateRepair.AutoSize = true;
-            this.dateRepair.Location = new System.Drawing.Point(297, 363);
+            this.dateRepair.Location = new System.Drawing.Point(290, 410);
             this.dateRepair.Name = "dateRepair";
             this.dateRepair.Size = new System.Drawing.Size(82, 25);
             this.dateRepair.TabIndex = 8;
@@ -537,7 +588,7 @@
             // dateIncome
             // 
             this.dateIncome.AutoSize = true;
-            this.dateIncome.Location = new System.Drawing.Point(61, 363);
+            this.dateIncome.Location = new System.Drawing.Point(54, 410);
             this.dateIncome.Name = "dateIncome";
             this.dateIncome.Size = new System.Drawing.Size(99, 25);
             this.dateIncome.TabIndex = 7;
@@ -548,7 +599,7 @@
             this.dateRepairBox.BackColor = System.Drawing.Color.Gainsboro;
             this.dateRepairBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dateRepairBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateRepairBox.Location = new System.Drawing.Point(278, 406);
+            this.dateRepairBox.Location = new System.Drawing.Point(269, 438);
             this.dateRepairBox.Name = "dateRepairBox";
             this.dateRepairBox.ReadOnly = true;
             this.dateRepairBox.Size = new System.Drawing.Size(122, 43);
@@ -560,7 +611,7 @@
             this.dateIncomeBox.BackColor = System.Drawing.Color.Gainsboro;
             this.dateIncomeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.dateIncomeBox.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateIncomeBox.Location = new System.Drawing.Point(51, 406);
+            this.dateIncomeBox.Location = new System.Drawing.Point(42, 438);
             this.dateIncomeBox.Name = "dateIncomeBox";
             this.dateIncomeBox.ReadOnly = true;
             this.dateIncomeBox.Size = new System.Drawing.Size(131, 43);
@@ -570,7 +621,7 @@
             // referanceDate
             // 
             this.referanceDate.AutoSize = true;
-            this.referanceDate.Location = new System.Drawing.Point(758, 24);
+            this.referanceDate.Location = new System.Drawing.Point(481, 40);
             this.referanceDate.Name = "referanceDate";
             this.referanceDate.Size = new System.Drawing.Size(177, 25);
             this.referanceDate.TabIndex = 4;
@@ -579,7 +630,7 @@
             // dateEndLabel
             // 
             this.dateEndLabel.AutoSize = true;
-            this.dateEndLabel.Location = new System.Drawing.Point(257, 24);
+            this.dateEndLabel.Location = new System.Drawing.Point(253, 13);
             this.dateEndLabel.Name = "dateEndLabel";
             this.dateEndLabel.Size = new System.Drawing.Size(111, 25);
             this.dateEndLabel.TabIndex = 3;
@@ -588,7 +639,7 @@
             // dateStartLabel
             // 
             this.dateStartLabel.AutoSize = true;
-            this.dateStartLabel.Location = new System.Drawing.Point(70, 24);
+            this.dateStartLabel.Location = new System.Drawing.Point(66, 13);
             this.dateStartLabel.Name = "dateStartLabel";
             this.dateStartLabel.Size = new System.Drawing.Size(121, 25);
             this.dateStartLabel.TabIndex = 2;
@@ -597,7 +648,7 @@
             // dateEnd
             // 
             this.dateEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateEnd.Location = new System.Drawing.Point(246, 63);
+            this.dateEnd.Location = new System.Drawing.Point(242, 52);
             this.dateEnd.Name = "dateEnd";
             this.dateEnd.Size = new System.Drawing.Size(139, 31);
             this.dateEnd.TabIndex = 1;
@@ -605,7 +656,7 @@
             // dateStart
             // 
             this.dateStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateStart.Location = new System.Drawing.Point(61, 63);
+            this.dateStart.Location = new System.Drawing.Point(57, 52);
             this.dateStart.Name = "dateStart";
             this.dateStart.Size = new System.Drawing.Size(140, 31);
             this.dateStart.TabIndex = 0;
@@ -1155,6 +1206,23 @@
             this.cash2Label.TabIndex = 0;
             this.cash2Label.Text = "Наличност в Каса 2";
             // 
+            // SearchBox
+            // 
+            this.SearchBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SearchBox.Location = new System.Drawing.Point(959, 20);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(300, 39);
+            this.SearchBox.TabIndex = 27;
+            // 
+            // SearchLabel
+            // 
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Location = new System.Drawing.Point(864, 26);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(79, 25);
+            this.SearchLabel.TabIndex = 28;
+            this.SearchLabel.Text = "Търсене";
+            // 
             // iTech
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1275,6 +1343,12 @@
         private System.Windows.Forms.Button POSTransferButton;
         private System.Windows.Forms.Label totalSumCashLabel;
         private System.Windows.Forms.TextBox TotalSumCashBox;
+        private System.Windows.Forms.Label WMYLabel;
+        private System.Windows.Forms.Button YearButton;
+        private System.Windows.Forms.Button MonthButton;
+        private System.Windows.Forms.Button WeekButton;
+        private System.Windows.Forms.Label SearchLabel;
+        private System.Windows.Forms.TextBox SearchBox;
     }
 }
 
