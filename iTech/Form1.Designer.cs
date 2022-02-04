@@ -394,6 +394,7 @@
             this.SearchBox.Name = "SearchBox";
             this.SearchBox.Size = new System.Drawing.Size(300, 39);
             this.SearchBox.TabIndex = 27;
+            this.SearchBox.TextChanged += new System.EventHandler(this.Search);
             // 
             // WMYLabel
             // 
@@ -1237,7 +1238,7 @@
             this.MaximizeBox = false;
             this.Name = "iTech";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TechZoneBG v2.0";
+            this.Text = "TechZoneBG v2.1";
             tab5.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.reference1.ResumeLayout(false);

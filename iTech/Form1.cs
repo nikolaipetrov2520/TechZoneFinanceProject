@@ -14,6 +14,7 @@ namespace iTech
         private List<RefIncome> incomeList;
         private List<RefCost> costPrintList;
         private List<RefIncome> dateIncomeList;
+        private List<RefIncome> filteredLit;
         private List<RefCost> dateCostList;
         private readonly TechZoneContext techzone = new TechZoneContext();
         public iTech()
@@ -21,6 +22,7 @@ namespace iTech
             incomeList = new List<RefIncome>();
             costPrintList = new List<RefCost>();
             dateIncomeList = new List<RefIncome>();
+            filteredLit = new List<RefIncome>();
             dateCostList = new List<RefCost>();
             InitializeComponent();
             tabControl1.SelectedTab = tab1;
@@ -584,10 +586,21 @@ namespace iTech
 
             dateIncomeList.Clear();
             SearchBox.Text = "";
+            SearchBox.Select();
+            Search(sender, e);
+
+        }
+
+        private void Search(object sender, EventArgs e)
+        {
+            filteredLit.Clear();
+            string searcBox = SearchBox.Text.ToLower();
+
+            DateTime startDate = DateTime.Parse(dateStart.Text);
+            DateTime endDate = DateTime.Parse(dateEnd.Text);          
 
             decimal sumIncome = 0;
             decimal sumRepair = 0;
-
 
             dateIncomeList = techzone.Incomes
                 .Where(x => x.Date >= startDate && x.Date <= endDate)
@@ -602,14 +615,16 @@ namespace iTech
                 })
                 .ToList();
 
-            foreach (var entity in dateIncomeList)
+            filteredLit = dateIncomeList.Where(x => x.Article.ToLower().Contains(searcBox) || x.Paymant.ToLower().Contains(searcBox)).ToList();
+
+            foreach (var entity in filteredLit)
             {
                 sumIncome += (decimal)(entity.Quantity * entity.Price);
                 sumRepair += (decimal)(entity.Quantity * entity.Repair);
             }
 
             dateBox.DataSource = null;
-            dateBox.DataSource = dateIncomeList;
+            dateBox.DataSource = filteredLit;
             dateBox.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
             dateBox.DefaultCellStyle.ForeColor = Color.Black;
             dateBox.EnableHeadersVisualStyles = false;
@@ -632,9 +647,8 @@ namespace iTech
             dateIncomeBox.Text = sumIncome.ToString();
             dateRepairBox.Text = sumRepair.ToString();
             totalBox.Text = (sumIncome + sumRepair).ToString();
-
-
         }
+
         private void MakeReference2_Click(object sender, EventArgs e)
         {
             DateTime startDate = DateTime.Parse(dateStart.Text);
@@ -1057,6 +1071,7 @@ namespace iTech
         {
             refferenceIncomeBox.ClearSelection();
         }
-       
+
+        
     }
 }
