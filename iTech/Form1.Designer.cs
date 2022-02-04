@@ -53,6 +53,8 @@
             this.costReferenceBox = new System.Windows.Forms.TextBox();
             this.costReferenceLabel = new System.Windows.Forms.Label();
             this.reference3 = new System.Windows.Forms.TabPage();
+            this.SearchLabel = new System.Windows.Forms.Label();
+            this.SearchBox = new System.Windows.Forms.TextBox();
             this.WMYLabel = new System.Windows.Forms.Label();
             this.YearButton = new System.Windows.Forms.Button();
             this.MonthButton = new System.Windows.Forms.Button();
@@ -123,8 +125,6 @@
             this.cash2OutLabel = new System.Windows.Forms.Label();
             this.cash2InLlabel = new System.Windows.Forms.Label();
             this.cash2Label = new System.Windows.Forms.Label();
-            this.SearchBox = new System.Windows.Forms.TextBox();
-            this.SearchLabel = new System.Windows.Forms.Label();
             tab5 = new System.Windows.Forms.TabPage();
             tab5.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -377,6 +377,23 @@
             this.reference3.Size = new System.Drawing.Size(1276, 554);
             this.reference3.TabIndex = 2;
             this.reference3.Text = "Справка по дати";
+            // 
+            // SearchLabel
+            // 
+            this.SearchLabel.AutoSize = true;
+            this.SearchLabel.Location = new System.Drawing.Point(864, 26);
+            this.SearchLabel.Name = "SearchLabel";
+            this.SearchLabel.Size = new System.Drawing.Size(79, 25);
+            this.SearchLabel.TabIndex = 28;
+            this.SearchLabel.Text = "Търсене";
+            // 
+            // SearchBox
+            // 
+            this.SearchBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SearchBox.Location = new System.Drawing.Point(959, 20);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(300, 39);
+            this.SearchBox.TabIndex = 27;
             // 
             // WMYLabel
             // 
@@ -1205,23 +1222,6 @@
             this.cash2Label.Size = new System.Drawing.Size(332, 47);
             this.cash2Label.TabIndex = 0;
             this.cash2Label.Text = "Наличност в Каса 2";
-            // 
-            // SearchBox
-            // 
-            this.SearchBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SearchBox.Location = new System.Drawing.Point(959, 20);
-            this.SearchBox.Name = "SearchBox";
-            this.SearchBox.Size = new System.Drawing.Size(300, 39);
-            this.SearchBox.TabIndex = 27;
-            // 
-            // SearchLabel
-            // 
-            this.SearchLabel.AutoSize = true;
-            this.SearchLabel.Location = new System.Drawing.Point(864, 26);
-            this.SearchLabel.Name = "SearchLabel";
-            this.SearchLabel.Size = new System.Drawing.Size(79, 25);
-            this.SearchLabel.TabIndex = 28;
-            this.SearchLabel.Text = "Търсене";
             // 
             // iTech
             // 

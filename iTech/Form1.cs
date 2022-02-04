@@ -581,10 +581,13 @@ namespace iTech
         {
             DateTime startDate = DateTime.Parse(dateStart.Text);
             DateTime endDate = DateTime.Parse(dateEnd.Text);
+
             dateIncomeList.Clear();
+            SearchBox.Text = "";
 
             decimal sumIncome = 0;
             decimal sumRepair = 0;
+
 
             dateIncomeList = techzone.Incomes
                 .Where(x => x.Date >= startDate && x.Date <= endDate)
@@ -636,7 +639,10 @@ namespace iTech
         {
             DateTime startDate = DateTime.Parse(dateStart.Text);
             DateTime endDate = DateTime.Parse(dateEnd.Text);
+
             dateCostList.Clear();
+            SearchBox.Text = "";
+
             decimal sumIncome = 0;
             decimal sumRepair = 0;
             decimal sumCost = 0;
@@ -1051,7 +1057,6 @@ namespace iTech
         {
             refferenceIncomeBox.ClearSelection();
         }
-
        
     }
 }
