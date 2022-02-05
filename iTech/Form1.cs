@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using iTech.Model;
-using iTech.Model;
 
 namespace iTech
 {
@@ -14,15 +13,19 @@ namespace iTech
         private List<RefIncome> incomeList;
         private List<RefCost> costPrintList;
         private List<RefIncome> dateIncomeList;
-        private List<RefIncome> filteredLit;
+        private List<RefIncome> filteredList;
+        private List<RefCost> filteredList2;
         private List<RefCost> dateCostList;
+        private string invoker;
         private readonly TechZoneContext techzone = new TechZoneContext();
         public iTech()
         {
             incomeList = new List<RefIncome>();
             costPrintList = new List<RefCost>();
             dateIncomeList = new List<RefIncome>();
-            filteredLit = new List<RefIncome>();
+            filteredList = new List<RefIncome>();
+            filteredList2 = new List<RefCost>();
+            invoker = "";
             dateCostList = new List<RefCost>();
             InitializeComponent();
             tabControl1.SelectedTab = tab1;
@@ -581,23 +584,34 @@ namespace iTech
 
         private void makeReference_Click(object sender, EventArgs e)
         {
-            DateTime startDate = DateTime.Parse(dateStart.Text);
-            DateTime endDate = DateTime.Parse(dateEnd.Text);
 
             dateIncomeList.Clear();
             SearchBox.Text = "";
             SearchBox.Select();
+            invoker = "Reference";
             Search(sender, e);
 
         }
 
         private void Search(object sender, EventArgs e)
         {
-            filteredLit.Clear();
+            if (invoker == "Reference")
+            {
+                RefferenceSearch();
+            }
+            if (invoker == "Reference2")
+            {
+                Refference2Search();
+            }
+        }
+
+        private void RefferenceSearch()
+        {
+            filteredList.Clear();
             string searcBox = SearchBox.Text.ToLower();
 
             DateTime startDate = DateTime.Parse(dateStart.Text);
-            DateTime endDate = DateTime.Parse(dateEnd.Text);          
+            DateTime endDate = DateTime.Parse(dateEnd.Text);
 
             decimal sumIncome = 0;
             decimal sumRepair = 0;
@@ -615,16 +629,16 @@ namespace iTech
                 })
                 .ToList();
 
-            filteredLit = dateIncomeList.Where(x => x.Article.ToLower().Contains(searcBox) || x.Paymant.ToLower().Contains(searcBox)).ToList();
+            filteredList = dateIncomeList.Where(x => x.Article.ToLower().Contains(searcBox) || x.Paymant.ToLower().Contains(searcBox)).ToList();
 
-            foreach (var entity in filteredLit)
+            foreach (var entity in filteredList)
             {
                 sumIncome += (decimal)(entity.Quantity * entity.Price);
                 sumRepair += (decimal)(entity.Quantity * entity.Repair);
             }
 
             dateBox.DataSource = null;
-            dateBox.DataSource = filteredLit;
+            dateBox.DataSource = filteredList;
             dateBox.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
             dateBox.DefaultCellStyle.ForeColor = Color.Black;
             dateBox.EnableHeadersVisualStyles = false;
@@ -649,13 +663,13 @@ namespace iTech
             totalBox.Text = (sumIncome + sumRepair).ToString();
         }
 
-        private void MakeReference2_Click(object sender, EventArgs e)
+        private void Refference2Search()
         {
             DateTime startDate = DateTime.Parse(dateStart.Text);
             DateTime endDate = DateTime.Parse(dateEnd.Text);
 
-            dateCostList.Clear();
-            SearchBox.Text = "";
+            filteredList2.Clear();
+            string searcBox = SearchBox.Text.ToLower();
 
             decimal sumIncome = 0;
             decimal sumRepair = 0;
@@ -671,14 +685,16 @@ namespace iTech
                 })
                 .ToList();
 
-            foreach (var entity in dateCostList)
+            filteredList2 = dateCostList.Where(x => x.Name.ToLower().Contains(searcBox)).ToList();
+
+            foreach (var entity in filteredList2)
             {
                 sumCost += (decimal)(entity.Sum);
             }
 
 
             dateBox.DataSource = null;
-            dateBox.DataSource = dateCostList;
+            dateBox.DataSource = filteredList2;
             dateBox.ColumnHeadersDefaultCellStyle.BackColor = Color.Silver;
             dateBox.DefaultCellStyle.ForeColor = Color.Black;
             dateBox.EnableHeadersVisualStyles = false;
@@ -692,6 +708,17 @@ namespace iTech
             dateIncomeBox.Text = sumIncome.ToString();
             dateRepairBox.Text = sumRepair.ToString();
             totalBox.Text = sumCost.ToString();
+        }
+
+        private void MakeReference2_Click(object sender, EventArgs e)
+        {
+            DateTime startDate = DateTime.Parse(dateStart.Text);
+            DateTime endDate = DateTime.Parse(dateEnd.Text);
+
+            dateCostList.Clear(); SearchBox.Text = "";
+            SearchBox.Select();
+            invoker = "Reference2";
+            Search(sender, e);
 
         }
 
