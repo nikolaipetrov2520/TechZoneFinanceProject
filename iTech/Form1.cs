@@ -662,6 +662,7 @@ namespace iTech
             dateRepairBox.Text = sumRepair.ToString();
             totalBox.Text = (sumIncome + sumRepair).ToString();
             RefferenceLabel.Text = $"{startDate.ToShortDateString()} - {endDate.ToShortDateString()}";
+            referanceDate.Text = "Приходи за периода:";
         }
 
         private void Refference2Search()
@@ -710,6 +711,7 @@ namespace iTech
             dateRepairBox.Text = sumRepair.ToString();
             totalBox.Text = sumCost.ToString();
             RefferenceLabel.Text = $"{startDate.ToShortDateString()} - {endDate.ToShortDateString()}";
+            referanceDate.Text = "Разходи за периода:";
         }
 
         private void MakeReference2_Click(object sender, EventArgs e)
@@ -728,18 +730,21 @@ namespace iTech
         {
             dateStart.Text = DateTime.Now.AddDays(-7).ToString();
             dateEnd.Text = DateTime.Now.ToString();
+            makeReference_Click(sender, e);
         }
 
         private void MonthButton_Click(object sender, EventArgs e)
         {
             dateStart.Text = DateTime.Now.AddDays(-30).ToString();
             dateEnd.Text = DateTime.Now.ToString();
+            makeReference_Click(sender, e);
         }
 
         private void YearButton_Click(object sender, EventArgs e)
         {
             dateStart.Text = DateTime.Now.AddDays(-365).ToString();
             dateEnd.Text = DateTime.Now.ToString();
+            makeReference_Click(sender, e);
 
         }
 
